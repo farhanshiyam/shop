@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roza Gift Corner & Electric - পণ্য</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--tx:#14263a;--mu:#5d6d80;--ac:#0f2d4a;--bd:#dde4ec}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1824;--card:#16263a;--tx:#e8eef5;--mu:#9fb0c3;--ac:#7fb8ee;--bd:#26384f}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI",system-ui,Arial,sans-serif}
+header{padding:22px 16px 12px;text-align:center}h1{margin:0;font-size:1.4rem;color:var(--ac)}header p{margin:6px 0 0;color:var(--mu)}
+.bar{max-width:1000px;margin:0 auto;padding:0 16px 12px}.bar input{width:100%;padding:12px 14px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);font:inherit}
+.grid{max-width:1000px;margin:0 auto;padding:0 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.p{background:var(--card);border:1px solid var(--bd);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.p img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--bd)}.p div{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.p b{font-size:.95rem}.p small{color:var(--mu);font-size:.8rem}.pr{font-weight:800;color:var(--ac)}
+.p a{margin-top:auto;text-align:center;text-decoration:none;background:var(--ac);color:var(--bg);padding:8px;border-radius:9px;font-weight:700;font-size:.85rem}
+.m{text-align:center;color:var(--mu);padding:30px 16px}
+</style>
+</head>
+<body>
+<header><h1>Roza Gift Corner &amp; Electric</h1><p>আমাদের পণ্যসমূহ</p></header>
+<div class="bar"><input id="q" type="search" placeholder="পণ্য খুঁজুন…" aria-label="Search"></div>
+<div class="grid" id="g"></div><div class="m" id="m">লোড হচ্ছে…</div>
+<script>
+/* Fill your WhatsApp number (country code, digits only, e.g. 8801XXXXXXXXX). Leave empty to hide the order button. */
+var WHATSAPP = "";
+var list = [], g = document.getElementById('g'), m = document.getElementById('m');
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+function draw() {
+  var k = document.getElementById('q').value.trim().toLowerCase();
+  var v = list.filter(function (p) { return p.on && (!k || (p.name + ' ' + (p.desc || '')).toLowerCase().indexOf(k) > -1); });
+  g.innerHTML = v.map(function (p) {
+    var msg = encodeURIComponent('আমি এই পণ্যটি নিতে চাই: ' + p.name);
+    return '<article class="p"><img loading="lazy" src="' + esc(p.img) + '" alt="' + esc(p.name) + '"><div><b>' + esc(p.name) + '</b>'
+      + (p.desc ? '<small>' + esc(p.desc) + '</small>' : '') + '<span class="pr">৳' + esc(p.price) + '</span>'
+      + (WHATSAPP ? '<a href="https://wa.me/' + WHATSAPP + '?text=' + msg + '" rel="noopener">অর্ডার করুন</a>' : '') + '</div></article>';
+  }).join('');
+  m.textContent = v.length ? '' : 'কোনো পণ্য পাওয়া যায়নি।';
+}
+fetch('products.json?t=' + Date.now()).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; })
+  .then(function (d) { list = Array.isArray(d) ? d : []; draw(); });
+document.getElementById('q').addEventListener('input', draw);
+</script>
+</body>
+</html>
