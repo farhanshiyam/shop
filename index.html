@@ -1,46 +1,168 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roza Gift Corner & Electric - পণ্য</title>
+<title>Roza Gift Corner &amp; Electric</title>
+<meta name="description" content="Gift items and electrical products - Roza Gift Corner &amp; Electric">
 <style>
-:root{--bg:#f6f8fb;--card:#fff;--tx:#14263a;--mu:#5d6d80;--ac:#0f2d4a;--bd:#dde4ec}
-@media (prefers-color-scheme:dark){:root{--bg:#0e1824;--card:#16263a;--tx:#e8eef5;--mu:#9fb0c3;--ac:#7fb8ee;--bd:#26384f}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI",system-ui,Arial,sans-serif}
-header{padding:22px 16px 12px;text-align:center}h1{margin:0;font-size:1.4rem;color:var(--ac)}header p{margin:6px 0 0;color:var(--mu)}
-.bar{max-width:1000px;margin:0 auto;padding:0 16px 12px}.bar input{width:100%;padding:12px 14px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);font:inherit}
-.grid{max-width:1000px;margin:0 auto;padding:0 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
-.p{background:var(--card);border:1px solid var(--bd);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.p img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--bd)}.p div{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
-.p b{font-size:.95rem}.p small{color:var(--mu);font-size:.8rem}.pr{font-weight:800;color:var(--ac)}
-.p a{margin-top:auto;text-align:center;text-decoration:none;background:var(--ac);color:var(--bg);padding:8px;border-radius:9px;font-weight:700;font-size:.85rem}
-.m{text-align:center;color:var(--mu);padding:30px 16px}
+:root{--bg:#f5f7fa;--card:#fff;--tx:#14263a;--mu:#64748b;--ac:#0f2d4a;--gd:#c8963e;--bd:#e2e8f0;--ok:#16794a;--er:#b42318}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1722;--card:#15253a;--tx:#e8eef5;--mu:#9fb0c3;--ac:#8cc2f2;--gd:#e0b05c;--bd:#26384f;--ok:#4cc38a;--er:#ff8a80}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI","Noto Sans Bengali",system-ui,Arial,sans-serif;line-height:1.5}
+button{font:inherit;cursor:pointer}a{color:inherit}
+header{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--bd)}
+.hd{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.br{font-weight:800;font-size:1.05rem;color:var(--ac);line-height:1.15}.br small{display:block;font-weight:600;font-size:.7rem;color:var(--gd);letter-spacing:.08em;text-transform:uppercase}
+.sr{flex:1;min-width:0}.sr input{width:100%;padding:10px 14px;border:1px solid var(--bd);border-radius:999px;background:var(--bg);color:var(--tx);font:inherit}
+.cb{position:relative;border:1px solid var(--bd);background:var(--card);color:var(--ac);border-radius:12px;padding:9px 12px;display:flex;align-items:center;gap:6px;font-weight:700}
+.cb i{position:absolute;top:-7px;right:-7px;background:var(--gd);color:#14263a;font-style:normal;font-size:.72rem;min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;padding:0 5px;font-weight:800}
+svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hero{background:linear-gradient(135deg,#0f2d4a,#1d4b73);color:#fff;text-align:center;padding:34px 16px}
+.hero h1{margin:0 0 6px;font-size:1.6rem}.hero p{margin:0;opacity:.85}
+main{max-width:1100px;margin:0 auto;padding:22px 16px 90px}
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}.sec h2{margin:0;font-size:1.15rem}.sec span{color:var(--mu);font-size:.85rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
+.p{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}.p:hover{box-shadow:0 8px 24px rgba(15,45,74,.12);transform:translateY(-2px)}
+.p img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--bd);display:block}
+.pb{padding:12px;display:flex;flex-direction:column;gap:4px;flex:1}.pb b{font-size:.95rem}.pb small{color:var(--mu);font-size:.8rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pr{font-weight:800;color:var(--ac);font-size:1.05rem;margin:2px 0 6px}
+.ac{margin-top:auto;display:grid;gap:6px}
+.b1,.b2,.b3{border-radius:10px;padding:9px 10px;font-weight:700;font-size:.85rem;border:1px solid var(--ac)}
+.b1{background:var(--ac);color:#fff}.b2{background:transparent;color:var(--ac)}.b3{background:var(--gd);border-color:var(--gd);color:#14263a;width:100%;padding:13px;font-size:1rem}
+@media (prefers-color-scheme:dark){.b1{color:#0d1722}}
+.em{text-align:center;color:var(--mu);padding:40px 10px;grid-column:1/-1}
+footer{border-top:1px solid var(--bd);background:var(--card);text-align:center;padding:22px 16px;color:var(--mu);font-size:.85rem}footer a{color:var(--ac);font-weight:700;text-decoration:none}
+.ov{position:fixed;inset:0;background:rgba(8,16,28,.55);z-index:40;display:none}.ov.on{display:block}
+.dr{position:absolute;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--card);display:flex;flex-direction:column}
+.dh{padding:14px 16px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center}.dh h3{margin:0}.x{background:none;border:0;color:var(--tx);font-size:1.5rem;line-height:1}
+.db{flex:1;overflow:auto;padding:12px 16px}.df{padding:14px 16px;border-top:1px solid var(--bd)}
+.ln{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd)}.ln img{width:60px;height:60px;border-radius:10px;object-fit:cover;background:var(--bd)}.ln div{flex:1;min-width:0}
+.q{display:inline-flex;align-items:center;border:1px solid var(--bd);border-radius:8px;margin-top:4px}.q button{background:none;border:0;color:var(--tx);padding:2px 10px;font-size:1.1rem}.q span{min-width:24px;text-align:center}
+.tt{display:flex;justify-content:space-between;font-weight:800;font-size:1.1rem;margin-bottom:10px}
+.md{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(480px,94%);max-height:92vh;overflow:auto;background:var(--card);border-radius:18px;padding:18px}
+.md h3{margin:0 0 12px}.f{margin-bottom:11px}.f label{display:block;font-size:.82rem;font-weight:700;margin-bottom:4px;color:var(--mu)}
+.f input,.f textarea{width:100%;padding:11px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit}
+.sm{background:var(--bg);border-radius:12px;padding:10px 12px;margin:12px 0;font-size:.9rem}.sm div{display:flex;justify-content:space-between;gap:10px;padding:2px 0}
+.er{color:var(--er);font-size:.88rem;min-height:1.2em;margin-bottom:8px}
+.ok{text-align:center;padding:10px 0}.ok .ck{width:64px;height:64px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;margin:0 auto 12px}.ok .ck svg{width:34px;height:34px;stroke-width:3}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--bd);display:grid;grid-template-columns:repeat(3,1fr);padding-bottom:env(safe-area-inset-bottom)}
+.bar a,.bar button{background:none;border:0;cursor:pointer;font:inherit;position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 4px 8px;color:var(--mu);text-decoration:none;font-size:.72rem;font-weight:600}.bar a.on,.bar button.on{color:var(--ac)}.bar a i{position:absolute;top:4px;left:calc(50% + 6px);background:var(--gd);color:#14263a;font-style:normal;font-size:.65rem;min-width:17px;height:17px;border-radius:9px;display:grid;place-items:center;padding:0 4px;font-weight:800}
+footer{padding-bottom:84px}
+.spm{position:fixed;right:10px;bottom:calc(64px + env(safe-area-inset-bottom));z-index:31;width:min(310px,calc(100% - 20px));background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:8px;box-shadow:0 12px 32px rgba(0,0,0,.25);display:none}.spm.on{display:block}
+.spm h4{margin:4px 8px 6px;font-size:.78rem;color:var(--mu);font-weight:700}.spm a{display:flex;gap:12px;align-items:center;padding:10px;border-radius:12px;text-decoration:none;color:var(--tx)}.spm a:hover{background:var(--bg)}
+.spm .ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;flex:none}.spm b{display:block;font-size:.92rem}.spm small{color:var(--mu);font-size:.78rem}
+.tm{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ac);color:#fff;padding:10px 18px;border-radius:999px;z-index:60;font-size:.9rem;display:none}
+@media (prefers-color-scheme:dark){.tm{color:#0d1722}}
+@media (max-width:520px){.br small{display:none}.cb span{display:none}.grid{gap:12px}}
 </style>
 </head>
 <body>
-<header><h1>Roza Gift Corner &amp; Electric</h1><p>আমাদের পণ্যসমূহ</p></header>
-<div class="bar"><input id="q" type="search" placeholder="পণ্য খুঁজুন…" aria-label="Search"></div>
-<div class="grid" id="g"></div><div class="m" id="m">লোড হচ্ছে…</div>
-<script>
-/* Fill your WhatsApp number (country code, digits only, e.g. 8801XXXXXXXXX). Leave empty to hide the order button. */
-var WHATSAPP = "";
-var list = [], g = document.getElementById('g'), m = document.getElementById('m');
-var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
-function draw() {
-  var k = document.getElementById('q').value.trim().toLowerCase();
-  var v = list.filter(function (p) { return p.on && (!k || (p.name + ' ' + (p.desc || '')).toLowerCase().indexOf(k) > -1); });
-  g.innerHTML = v.map(function (p) {
-    var msg = encodeURIComponent('আমি এই পণ্যটি নিতে চাই: ' + p.name);
-    return '<article class="p"><img loading="lazy" src="' + esc(p.img) + '" alt="' + esc(p.name) + '"><div><b>' + esc(p.name) + '</b>'
-      + (p.desc ? '<small>' + esc(p.desc) + '</small>' : '') + '<span class="pr">৳' + esc(p.price) + '</span>'
-      + (WHATSAPP ? '<a href="https://wa.me/' + WHATSAPP + '?text=' + msg + '" rel="noopener">অর্ডার করুন</a>' : '') + '</div></article>';
-  }).join('');
-  m.textContent = v.length ? '' : 'কোনো পণ্য পাওয়া যায়নি।';
+<header><div class="hd">
+  <div class="br">Roza Gift Corner<small>&amp; Electric</small></div>
+  <div class="sr"><input id="q" type="search" data-ph="search" data-al="search"></div>
+  <button class="cb" id="cbtn" data-al="cart"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span data-i="cart"></span><i id="cn">0</i></button>
+  <button class="cb" id="lg" type="button" aria-label="Language">বাংলা</button>
+</div></header>
+<div class="hero"><h1>Roza Gift Corner &amp; Electric</h1><p data-i="tag"></p></div>
+<main><div class="sec"><h2 data-i="ours"></h2><span id="cnt"></span></div><div class="grid" id="g"><div class="em" data-i="loading"></div></div></main>
+<footer>© <span id="yr"></span> Roza Gift Corner &amp; Electric &nbsp;•&nbsp; <a id="fh" href="#" target="_blank" rel="noopener" data-i="help"></a> &nbsp;•&nbsp; <a href="https://farhanshiyam.github.io/due-checker/live-chat" data-i="lc"></a></footer>
+
+<nav class="bar" aria-label="Quick links"><a data-r="" href="#"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span data-i="home"></span></a><a data-r="cart" href="#"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><i id="cn2">0</i><span data-i="cart"></span></a><button type="button" id="sp" aria-haspopup="true" aria-expanded="false" aria-controls="spm"><svg viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 15a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2zM3 15a2 2 0 0 0 2 2h1v-5H5a2 2 0 0 0-2 2z"/></svg><span data-i="support"></span></button></nav>
+<div class="spm" id="spm"><h4 data-i="hw"></h4><a id="lc" href="https://farhanshiyam.github.io/due-checker/live-chat"><span class="ic" style="background:var(--ac);color:var(--bg)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="3"/><path d="M8 21l3-4"/><path d="M8 9h8M8 12h5"/></svg></span><span><b data-i="lc"></b><small data-i="lcs"></small></span></a><a id="wa" href="#" target="_blank" rel="noopener"><span class="ic" style="background:#25d366;color:#fff"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></span><span><b>WhatsApp</b><small data-i="was"></small></span></a></div>
+<div class="ov" id="ov"></div><div class="tm" id="tm"></div>
+<script type="module">
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import {getFirestore,doc,getDoc,setDoc,serverTimestamp} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+const HELP='8801319362189';
+const BASE=(()=>{const g=/\.github\.io$/.test(location.hostname),sg=location.pathname.split('/')[1];return g&&sg?'/'+sg+'/':'/'})();
+try{let r=sessionStorage.getItem('rg_redirect');sessionStorage.removeItem('rg_redirect');if(!r){const x=JSON.parse(localStorage.getItem('rg_redirect')||'null');localStorage.removeItem('rg_redirect');if(x&&Date.now()-x.t<15000)r=x.p}if(r&&r.indexOf(BASE)===0)history.replaceState(null,'',r)}catch(e){}
+try{history.scrollRestoration='manual'}catch(e){}
+const ss=(k,v)=>{try{v===undefined?sessionStorage.removeItem(k):sessionStorage.setItem(k,JSON.stringify(v))}catch(e){}},sg=k=>{try{return JSON.parse(sessionStorage.getItem(k)||'null')}catch(e){return null}};
+const saveUI=()=>ss('rg_ui',{y:scrollY,q:document.querySelector('#q').value});
+addEventListener('pagehide',saveUI);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveUI()});
+document.addEventListener('input',e=>{if(/^(cn1|cp|ca|cm)$/.test(e.target.id)){const d=sg('rg_draft')||{};d[e.target.id]=e.target.value;ss('rg_draft',d)}});
+const db=getFirestore(initializeApp({apiKey:"AIzaSyCZOUCY2_19d6g5pnuVmEi1prfc-wBeN9w",authDomain:"rgce-sparkdesk-2.firebaseapp.com",projectId:"rgce-sparkdesk-2",appId:"1:1057222039031:web:f82f411076a579b905caf2"}));
+const $=s=>document.querySelector(s),esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const wl=m=>'https://wa.me/'+HELP+(m?'?text='+encodeURIComponent(m):'');
+const TX={en:{search:'Search products…',cart:'Cart',tag:'Your trusted store for gifts and electricals',ours:'Our Products',loading:'Loading…',help:'Help & Inquiries',support:'Support',hw:'How can we help?',lcs:'Chat with us online',was:'Message us on WhatsApp',home:'Home',wab:'WhatsApp',lc:'Live Chat',wa2:'Chat on WhatsApp',items:'products',none:'No products found.',added:'Added to cart',add:'Add to Cart',buy:'Buy Now',yc:'Your Cart',close:'Close',rm:'Remove',empty:'Your cart is empty.',total:'Total',order:'Place Order',dt:'Delivery Details',nm:'Full name',ph:'Mobile number',ad:'Full address',nt:'Notes (optional)',pay:'Payment',onDel:'On delivery',gt:'Grand total',conf:'Confirm Order',e1:'Please enter your name.',e2:'Enter a valid mobile number (e.g. 01XXXXXXXXX).',e3:'Please enter your full address.',wait:'Please wait…',done:'Order placed',onum:'Your order number is',soon:'Our representative will contact you shortly.',ok:'OK',fail:'Your order could not be submitted. Please try again or',gethelp:'contact support',m1:'Hello, I have an inquiry.',m2:'I am unable to place an order.',lg:'বাংলা'},
+bn:{search:'পণ্য খুঁজুন…',cart:'কার্ট',tag:'উপহার ও ইলেকট্রিক পণ্যের বিশ্বস্ত ঠিকানা',ours:'আমাদের পণ্য',loading:'লোড হচ্ছে…',help:'সহায়তা ও জিজ্ঞাসা',support:'সহায়তা',hw:'আমরা কীভাবে সাহায্য করতে পারি?',lcs:'অনলাইনে আমাদের সাথে কথা বলুন',was:'WhatsApp-এ মেসেজ করুন',home:'হোম',wab:'WhatsApp',lc:'লাইভ চ্যাট',wa2:'WhatsApp-এ মেসেজ',items:'টি পণ্য',none:'কোনো পণ্য পাওয়া যায়নি।',added:'কার্টে যোগ হয়েছে',add:'কার্টে যোগ করুন',buy:'এখনই কিনুন',yc:'আপনার কার্ট',close:'বন্ধ',rm:'মুছুন',empty:'আপনার কার্ট খালি।',total:'মোট',order:'অর্ডার করুন',dt:'ডেলিভারির তথ্য',nm:'আপনার নাম',ph:'মোবাইল নম্বর',ad:'সম্পূর্ণ ঠিকানা',nt:'বিশেষ নির্দেশনা (ঐচ্ছিক)',pay:'পেমেন্ট',onDel:'ডেলিভারির সময়',gt:'সর্বমোট',conf:'অর্ডার নিশ্চিত করুন',e1:'আপনার নামটি লিখুন।',e2:'সঠিক মোবাইল নম্বর দিন (যেমন 01XXXXXXXXX)।',e3:'সম্পূর্ণ ঠিকানা লিখুন।',wait:'অনুগ্রহ করে অপেক্ষা করুন…',done:'অর্ডার সম্পন্ন হয়েছে',onum:'আপনার অর্ডার নম্বর',soon:'আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।',ok:'ঠিক আছে',fail:'অর্ডার জমা হয়নি। আবার চেষ্টা করুন অথবা',gethelp:'সহায়তা নিন',m1:'আসসালামু আলাইকুম, আমার একটি জিজ্ঞাসা ছিল।',m2:'আমি অর্ডার করতে পারছি না।',lg:'EN'}};
+let L='en';try{L=localStorage.getItem('rg_lang')==='bn'?'bn':'en'}catch(e){}
+const t=k=>TX[L][k];
+function paint(){document.documentElement.lang=L;document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t(e.dataset.i));document.querySelectorAll('[data-ph]').forEach(e=>e.placeholder=t(e.dataset.ph));document.querySelectorAll('[data-al]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.al)));$('#lg').textContent=t('lg');$('#wa').href=wl(t('m1'));$('#fh').href=$('#wa').href}
+const bn=n=>Math.round(n).toLocaleString(L==='bn'?'bn-BD':'en-US'),tk=n=>'৳'+bn(n);
+$('#yr').textContent=new Date().getFullYear();paint();
+let P=[],cart={};try{cart=JSON.parse(localStorage.getItem('rg_cart')||'{}')}catch(e){}
+const keep=()=>{try{localStorage.setItem('rg_cart',JSON.stringify(cart))}catch(e){}};
+const find=id=>P.find(p=>p.id===id);
+const lines=()=>Object.keys(cart).map(id=>({p:find(id),q:cart[id]})).filter(x=>x.p&&x.q>0);
+const sum=a=>a.reduce((t,x)=>t+x.p.price*x.q,0);
+function toast(m){const t=$('#tm');t.textContent=m;t.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display='none',1800)}
+function badge(){$('#cn').textContent=$('#cn2').textContent=bn(lines().reduce((t,x)=>t+x.q,0))}
+function draw(){
+  const k=$('#q').value.trim().toLowerCase(),v=P.filter(p=>p.on&&(!k||(p.name+' '+(p.desc||'')).toLowerCase().includes(k)));
+  $('#cnt').textContent=v.length?bn(v.length)+(L==='bn'?'':' ')+t('items'):'';
+  $('#g').innerHTML=v.length?v.map(p=>'<article class="p"><img loading="lazy" src="'+esc(BASE+p.img)+'" alt="'+esc(p.name)+'"><div class="pb"><b>'+esc(p.name)+'</b>'+(p.desc?'<small>'+esc(p.desc)+'</small>':'')+'<div class="pr">'+tk(p.price)+'</div><div class="ac"><button class="b1" data-a="add" data-id="'+esc(p.id)+'">'+t('add')+'</button><button class="b2" data-a="buy" data-id="'+esc(p.id)+'">'+t('buy')+'</button></div></div></article>').join(''):'<div class="em">'+t('none')+'</div>';
 }
-fetch('products.json?t=' + Date.now()).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; })
-  .then(function (d) { list = Array.isArray(d) ? d : []; draw(); });
-document.getElementById('q').addEventListener('input', draw);
+const nav=(r,rp)=>{try{history[rp?'replaceState':'pushState'](null,'',BASE+r)}catch(e){}route()};
+const close=()=>{if(location.pathname!==BASE)nav('');else{$('#ov').className='ov';$('#ov').innerHTML=''}};
+function route(){
+  const r=location.pathname.slice(BASE.length).replace(/index\.html$/,'').replace(/^\/+|\/+$/g,''),sp=r.split('/');let on='';
+  $('#ov').className='ov';$('#ov').innerHTML='';
+  if(sp[0]==='cart'){cartView();on='cart'}
+  else if(sp[0]==='checkout'){const l=lines();if(l.length)checkout(l,true);else return nav('cart',1);on='cart'}
+  else if(sp[0]==='buy-now'&&find(sp[1]))checkout([{p:find(sp[1]),q:1}],false);
+  else if(r&&P.length)history.replaceState(null,'',BASE);
+  document.querySelectorAll('a[data-r]').forEach(a=>{a.href=BASE+a.dataset.r;a.classList.toggle('on',a.dataset.r===on)});
+}
+window.addEventListener('popstate',route);
+function cartView(){
+  const L=lines();$('#ov').className='ov on';
+  $('#ov').innerHTML='<div class="dr"><div class="dh"><h3>'+t('yc')+'</h3><button class="x" data-a="close" aria-label="'+t('close')+'">×</button></div><div class="db">'+(L.length?L.map(x=>'<div class="ln"><img src="'+esc(BASE+x.p.img)+'" alt=""><div><b>'+esc(x.p.name)+'</b><div>'+tk(x.p.price)+'</div><span class="q"><button data-a="dec" data-id="'+esc(x.p.id)+'">−</button><span>'+bn(x.q)+'</span><button data-a="inc" data-id="'+esc(x.p.id)+'">+</button></span></div><button class="x" data-a="rm" data-id="'+esc(x.p.id)+'" aria-label="'+t('rm')+'">×</button></div>').join(''):'<div class="em">'+t('empty')+'</div>')+'</div>'+(L.length?'<div class="df"><div class="tt"><span>'+t('total')+'</span><span>'+tk(sum(L))+'</span></div><button class="b3" data-a="co">'+t('order')+'</button></div>':'')+'</div>';
+}
+function checkout(items,fromCart){
+  $('#ov').className='ov on';
+  $('#ov').innerHTML='<div class="md"><div class="dh" style="padding:0 0 10px"><h3>'+t('dt')+'</h3><button class="x" data-a="close" aria-label="'+t('close')+'">×</button></div>'
+  +'<div class="f"><label for="cn1">'+t('nm')+'</label><input id="cn1" autocomplete="name"></div><div class="f"><label for="cp">'+t('ph')+'</label><input id="cp" type="tel" inputmode="numeric" autocomplete="tel" placeholder="01XXXXXXXXX"></div>'
+  +'<div class="f"><label for="ca">'+t('ad')+'</label><textarea id="ca" rows="3" autocomplete="street-address"></textarea></div><div class="f"><label for="cm">'+t('nt')+'</label><input id="cm"></div>'
+  +'<div class="sm">'+items.map(x=>'<div><span>'+esc(x.p.name)+' × '+bn(x.q)+'</span><span>'+tk(x.p.price*x.q)+'</span></div>').join('')+'<div style="border-top:1px solid var(--bd);margin-top:6px;padding-top:6px"><span>'+t('pay')+'</span><span>'+t('onDel')+'</span></div><div style="font-weight:800"><span>'+t('gt')+'</span><span>'+tk(sum(items))+'</span></div></div>'
+  +'<div class="er" id="er"></div><button class="b3" id="go">'+t('conf')+'</button></div>';
+  {const d=sg('rg_draft')||{};['cn1','cp','ca','cm'].forEach(i=>{if(d[i])$('#'+i).value=d[i]})}
+  $('#go').onclick=async()=>{
+    const name=$('#cn1').value.trim(),ph=$('#cp').value.replace(/[\s-]/g,'').replace(/[০-৯]/g,d=>'০১২৩৪৫৬৭৮৯'.indexOf(d)),ad=$('#ca').value.trim(),er=$('#er');
+    if(name.length<2)return er.textContent=t('e1');
+    if(!/^(\+?88)?01[3-9]\d{8}$/.test(ph))return er.textContent=t('e2');
+    if(ad.length<8)return er.textContent=t('e3');
+    const b=$('#go');b.disabled=true;b.textContent=t('wait');er.textContent='';
+    try{
+      const ow=await getDoc(doc(db,'site_public','rgce-shop'));if(!ow.exists())throw new Error('x');
+      const r=crypto.getRandomValues(new Uint32Array(2)),d=new Date(),no='RG'+String(d.getFullYear()).slice(2)+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+String(r[0]%10000).padStart(4,'0');
+      await setDoc(doc(db,'shop_orders',no.toLowerCase()+r[1].toString(36)),{ownerUid:ow.data().ownerUid,orderNo:no,name,phone:ph,address:ad,note:$('#cm').value.trim().slice(0,200),items:items.map(x=>({n:x.p.name,q:x.q,p:x.p.price})),total:sum(items),status:'new',createdAt:serverTimestamp()});
+      ss('rg_draft');if(fromCart){cart={};keep();badge()}
+      $('#ov').innerHTML='<div class="md"><div class="ok"><div class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><h3>'+t('done')+'</h3><p>'+t('onum')+' <b>'+no+'</b>.<br>'+t('soon')+'</p><button class="b2" style="width:100%;padding:12px" data-a="close">'+t('ok')+'</button></div></div>';
+    }catch(e){console.warn(e);b.disabled=false;b.textContent=t('conf');er.innerHTML=t('fail')+' <a href="'+wl(t('m2'))+'" target="_blank" rel="noopener">'+t('gethelp')+'</a>.'}
+  };
+}
+document.addEventListener('click',e=>{
+  if(e.target.id==='ov')return close();
+  const rl=e.target.closest('a[data-r]');if(rl){e.preventDefault();nav(rl.dataset.r);return}
+  const b=e.target.closest('[data-a]');if(!b){if(e.target.closest('#cbtn'))nav('cart');return}
+  const a=b.dataset.a,id=b.dataset.id,p=find(id);
+  if(a==='add'&&p){cart[id]=(cart[id]||0)+1;keep();badge();toast(t('added'))}
+  else if(a==='buy'&&p)nav('buy-now/'+id);
+  else if(a==='inc'){cart[id]++;keep();badge();cartView()}
+  else if(a==='dec'){cart[id]=Math.max(1,cart[id]-1);keep();badge();cartView()}
+  else if(a==='rm'){delete cart[id];keep();badge();cartView()}
+  else if(a==='co')nav('checkout');
+  else if(a==='close')close();
+});
+$('#lg').addEventListener('click',()=>{L=L==='bn'?'en':'bn';try{localStorage.setItem('rg_lang',L)}catch(e){}paint();close();draw();badge()});
+const shut=()=>{$('#spm').classList.remove('on');$('#sp').classList.remove('on');$('#sp').setAttribute('aria-expanded','false')};
+$('#sp').addEventListener('click',e=>{e.stopPropagation();const o=$('#spm').classList.toggle('on');$('#sp').classList.toggle('on',o);$('#sp').setAttribute('aria-expanded',o)});
+document.addEventListener('click',e=>{if(!e.target.closest('#spm'))shut()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){shut();close()}});
+$('#q').addEventListener('input',draw);
+let rs=null;try{const nv=performance.getEntriesByType('navigation')[0];if(nv&&nv.type==='back_forward')rs=sg('rg_ui')}catch(e){}
+fetch(BASE+'products.json?t='+Date.now()).then(r=>r.ok?r.json():[]).catch(()=>[]).then(d=>{P=Array.isArray(d)?d:[];if(rs)$('#q').value=rs.q||'';draw();badge();route();if(rs)requestAnimationFrame(()=>scrollTo(0,rs.y||0))});
 </script>
 </body>
 </html>
