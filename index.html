@@ -4,21 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Roza Gift Corner &amp; Electric</title>
+<link rel="icon" type="image/png" href="roza-icon-192.png"><link rel="apple-touch-icon" href="roza-icon-192.png"><meta name="theme-color" content="#ee6f7b">
 <meta name="description" content="Gift items and electrical products - Roza Gift Corner &amp; Electric">
 <style>
-:root{--bg:#f5f7fa;--card:#fff;--tx:#14263a;--mu:#64748b;--ac:#0f2d4a;--gd:#c8963e;--bd:#e2e8f0;--ok:#16794a;--er:#b42318}
-@media (prefers-color-scheme:dark){:root{--bg:#0d1722;--card:#15253a;--tx:#e8eef5;--mu:#9fb0c3;--ac:#8cc2f2;--gd:#e0b05c;--bd:#26384f;--ok:#4cc38a;--er:#ff8a80}}
+:root{--bg:#f7f6fb;--card:#fff;--tx:#1c1b45;--mu:#6b7280;--ac:#1c1b45;--gd:#ee6f7b;--bd:#e2e8f0;--ok:#16794a;--er:#b42318}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1722;--card:#15253a;--tx:#e8eef5;--mu:#9fb0c3;--ac:#b9c0ff;--gd:#ff8d97;--bd:#26384f;--ok:#4cc38a;--er:#ff8a80}}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI","Noto Sans Bengali",system-ui,Arial,sans-serif;line-height:1.5}
 button{font:inherit;cursor:pointer}a{color:inherit}
 header{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--bd)}
 .hd{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
 .br{font-weight:800;font-size:1.05rem;color:var(--ac);line-height:1.15}.br small{display:block;font-weight:600;font-size:.7rem;color:var(--gd);letter-spacing:.08em;text-transform:uppercase}
 .sr{flex:1;min-width:0}.sr input{width:100%;padding:10px 14px;border:1px solid var(--bd);border-radius:999px;background:var(--bg);color:var(--tx);font:inherit}
+.spn{position:fixed;left:0;right:0;top:var(--hh,60px);z-index:19;background:var(--card);border-bottom:1px solid var(--bd);padding:10px 16px;transform:translateY(-14px);opacity:0;visibility:hidden;transition:transform .2s,opacity .2s,visibility .2s}
+.spn.on{transform:none;opacity:1;visibility:visible;box-shadow:0 10px 22px rgba(28,27,69,.12)}
+.spi{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--bd);border-radius:999px;padding:0 8px 0 14px;color:var(--mu)}.spi:focus-within{border-color:var(--gd)}
+.spi input{flex:1;min-width:0;border:0;background:transparent;color:var(--tx);font:inherit;font-size:16px;padding:12px 2px;outline:0}
+#sd{top:6px;right:6px;min-width:10px;width:10px;height:10px;padding:0}#sd[hidden]{display:none}
 .cb{position:relative;border:1px solid var(--bd);background:var(--card);color:var(--ac);border-radius:12px;padding:9px 12px;display:flex;align-items:center;gap:6px;font-weight:700}
 .cb i{position:absolute;top:-7px;right:-7px;background:var(--gd);color:#14263a;font-style:normal;font-size:.72rem;min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;padding:0 5px;font-weight:800}
 svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.hero{background:linear-gradient(135deg,#0f2d4a,#1d4b73);color:#fff;text-align:center;padding:34px 16px}
-.hero h1{margin:0 0 6px;font-size:1.6rem}.hero p{margin:0;opacity:.85}
+.hero{background:linear-gradient(135deg,#fff1f3,#eceeff);text-align:center;padding:26px 16px 22px}@media (prefers-color-scheme:dark){.hero{background:linear-gradient(135deg,#1a2740,#1b2038)}}
+.hl{background:#fff;border-radius:20px;padding:10px 20px;width:min(300px,82%);height:auto;box-shadow:0 6px 20px rgba(28,27,69,.12)}.hero p{margin:12px 0 0;color:var(--mu)}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.br{display:flex;align-items:center;gap:10px;text-decoration:none}.br img{width:40px;height:40px;border-radius:10px;flex:none}
 main{max-width:1100px;margin:0 auto;padding:22px 16px 90px}
 .sec{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}.sec h2{margin:0;font-size:1.15rem}.sec span{color:var(--mu);font-size:.85rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
@@ -58,12 +65,14 @@ footer{padding-bottom:84px}
 </head>
 <body>
 <header><div class="hd">
-  <div class="br">Roza Gift Corner<small>&amp; Electric</small></div>
-  <div class="sr"><input id="q" type="search" data-ph="search" data-al="search"></div>
+  <a class="br" data-r="" href="#"><img src="roza-icon-192.png" alt="" width="40" height="40"><span>Roza Gift Corner<small>&amp; Electric</small></span></a>
+  <div style="flex:1"></div>
+  <button class="cb" id="sb" type="button" data-al="search" aria-expanded="false" aria-controls="spn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><i id="sd" hidden></i></button>
   <button class="cb" id="cbtn" data-al="cart"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span data-i="cart"></span><i id="cn">0</i></button>
   <button class="cb" id="lg" type="button" aria-label="Language">বাংলা</button>
 </div></header>
-<div class="hero"><h1>Roza Gift Corner &amp; Electric</h1><p data-i="tag"></p></div>
+<div class="spn" id="spn" role="search"><div class="spi"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="q" type="search" data-ph="search" data-al="search" autocomplete="off" enterkeyhint="search"><button type="button" id="sx" class="x" data-al="close" hidden>×</button></div></div>
+<div class="hero"><h1 class="vh">Roza Gift Corner &amp; Electric</h1><img class="hl" src="roza-logo.png" alt="Roza Gift Corner &amp; Electric"><p data-i="tag"></p></div>
 <main><div class="sec"><h2 data-i="ours"></h2><span id="cnt"></span></div><div class="grid" id="g"><div class="em" data-i="loading"></div></div></main>
 <footer>© <span id="yr"></span> Roza Gift Corner &amp; Electric &nbsp;•&nbsp; <a id="fh" href="#" target="_blank" rel="noopener" data-i="help"></a> &nbsp;•&nbsp; <a href="https://farhanshiyam.github.io/due-checker/live-chat" data-i="lc"></a></footer>
 
@@ -74,6 +83,8 @@ footer{padding-bottom:84px}
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
 import {getFirestore,doc,getDoc,setDoc,serverTimestamp} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 const HELP='8801319362189';
+/* delivery charge: 0 = free. Example: {charge:60,freeAbove:2000} -> ৳60, free for orders of ৳2000 or more */
+const SHIP={charge:0,freeAbove:0},ship=v=>SHIP.charge>0&&!(SHIP.freeAbove>0&&v>=SHIP.freeAbove)?SHIP.charge:0;
 const BASE=(()=>{const g=/\.github\.io$/.test(location.hostname),sg=location.pathname.split('/')[1];return g&&sg?'/'+sg+'/':'/'})();
 try{let r=sessionStorage.getItem('rg_redirect');sessionStorage.removeItem('rg_redirect');if(!r){const x=JSON.parse(localStorage.getItem('rg_redirect')||'null');localStorage.removeItem('rg_redirect');if(x&&Date.now()-x.t<15000)r=x.p}if(r&&r.indexOf(BASE)===0)history.replaceState(null,'',r)}catch(e){}
 try{history.scrollRestoration='manual'}catch(e){}
@@ -84,8 +95,8 @@ document.addEventListener('input',e=>{if(/^(cn1|cp|ca|cm)$/.test(e.target.id)){c
 const db=getFirestore(initializeApp({apiKey:"AIzaSyCZOUCY2_19d6g5pnuVmEi1prfc-wBeN9w",authDomain:"rgce-sparkdesk-2.firebaseapp.com",projectId:"rgce-sparkdesk-2",appId:"1:1057222039031:web:f82f411076a579b905caf2"}));
 const $=s=>document.querySelector(s),esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const wl=m=>'https://wa.me/'+HELP+(m?'?text='+encodeURIComponent(m):'');
-const TX={en:{search:'Search products…',cart:'Cart',tag:'Your trusted store for gifts and electricals',ours:'Our Products',loading:'Loading…',help:'Help & Inquiries',support:'Support',hw:'How can we help?',lcs:'Chat with us online',was:'Message us on WhatsApp',home:'Home',wab:'WhatsApp',lc:'Live Chat',wa2:'Chat on WhatsApp',items:'products',none:'No products found.',added:'Added to cart',add:'Add to Cart',buy:'Buy Now',yc:'Your Cart',close:'Close',rm:'Remove',empty:'Your cart is empty.',total:'Total',order:'Place Order',dt:'Delivery Details',nm:'Full name',ph:'Mobile number',ad:'Full address',nt:'Notes (optional)',pay:'Payment',onDel:'On delivery',gt:'Grand total',conf:'Confirm Order',e1:'Please enter your name.',e2:'Enter a valid mobile number (e.g. 01XXXXXXXXX).',e3:'Please enter your full address.',wait:'Please wait…',done:'Order placed',onum:'Your order number is',soon:'Our representative will contact you shortly.',ok:'OK',fail:'Your order could not be submitted. Please try again or',gethelp:'contact support',m1:'Hello, I have an inquiry.',m2:'I am unable to place an order.',lg:'বাংলা'},
-bn:{search:'পণ্য খুঁজুন…',cart:'কার্ট',tag:'উপহার ও ইলেকট্রিক পণ্যের বিশ্বস্ত ঠিকানা',ours:'আমাদের পণ্য',loading:'লোড হচ্ছে…',help:'সহায়তা ও জিজ্ঞাসা',support:'সহায়তা',hw:'আমরা কীভাবে সাহায্য করতে পারি?',lcs:'অনলাইনে আমাদের সাথে কথা বলুন',was:'WhatsApp-এ মেসেজ করুন',home:'হোম',wab:'WhatsApp',lc:'লাইভ চ্যাট',wa2:'WhatsApp-এ মেসেজ',items:'টি পণ্য',none:'কোনো পণ্য পাওয়া যায়নি।',added:'কার্টে যোগ হয়েছে',add:'কার্টে যোগ করুন',buy:'এখনই কিনুন',yc:'আপনার কার্ট',close:'বন্ধ',rm:'মুছুন',empty:'আপনার কার্ট খালি।',total:'মোট',order:'অর্ডার করুন',dt:'ডেলিভারির তথ্য',nm:'আপনার নাম',ph:'মোবাইল নম্বর',ad:'সম্পূর্ণ ঠিকানা',nt:'বিশেষ নির্দেশনা (ঐচ্ছিক)',pay:'পেমেন্ট',onDel:'ডেলিভারির সময়',gt:'সর্বমোট',conf:'অর্ডার নিশ্চিত করুন',e1:'আপনার নামটি লিখুন।',e2:'সঠিক মোবাইল নম্বর দিন (যেমন 01XXXXXXXXX)।',e3:'সম্পূর্ণ ঠিকানা লিখুন।',wait:'অনুগ্রহ করে অপেক্ষা করুন…',done:'অর্ডার সম্পন্ন হয়েছে',onum:'আপনার অর্ডার নম্বর',soon:'আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।',ok:'ঠিক আছে',fail:'অর্ডার জমা হয়নি। আবার চেষ্টা করুন অথবা',gethelp:'সহায়তা নিন',m1:'আসসালামু আলাইকুম, আমার একটি জিজ্ঞাসা ছিল।',m2:'আমি অর্ডার করতে পারছি না।',lg:'EN'}};
+const TX={en:{search:'Search products…',cart:'Cart',tag:'Your trusted store for gifts and electricals',ours:'Our Products',loading:'Loading…',help:'Help & Inquiries',support:'Support',del:'Delivery',free:'Free',hw:'How can we help?',lcs:'Chat with us online',was:'Message us on WhatsApp',home:'Home',wab:'WhatsApp',lc:'Live Chat',wa2:'Chat on WhatsApp',items:'products',none:'No products found.',added:'Added to cart',add:'Add to Cart',buy:'Buy Now',yc:'Your Cart',close:'Close',rm:'Remove',empty:'Your cart is empty.',total:'Total',order:'Place Order',dt:'Delivery Details',nm:'Full name',ph:'Mobile number',ad:'Full address',nt:'Notes (optional)',pay:'Payment',onDel:'On delivery',gt:'Grand total',conf:'Confirm Order',e1:'Please enter your name.',e2:'Enter a valid mobile number (e.g. 01XXXXXXXXX).',e3:'Please enter your full address.',wait:'Please wait…',done:'Order placed',onum:'Your order number is',soon:'Our representative will contact you shortly.',ok:'OK',fail:'Your order could not be submitted. Please try again or',gethelp:'contact support',m1:'Hello, I have an inquiry.',m2:'I am unable to place an order.',lg:'বাংলা'},
+bn:{search:'পণ্য খুঁজুন…',cart:'কার্ট',tag:'উপহার ও ইলেকট্রিক পণ্যের বিশ্বস্ত ঠিকানা',ours:'আমাদের পণ্য',loading:'লোড হচ্ছে…',help:'সহায়তা ও জিজ্ঞাসা',support:'সহায়তা',del:'ডেলিভারি চার্জ',free:'ফ্রি',hw:'আমরা কীভাবে সাহায্য করতে পারি?',lcs:'অনলাইনে আমাদের সাথে কথা বলুন',was:'WhatsApp-এ মেসেজ করুন',home:'হোম',wab:'WhatsApp',lc:'লাইভ চ্যাট',wa2:'WhatsApp-এ মেসেজ',items:'টি পণ্য',none:'কোনো পণ্য পাওয়া যায়নি।',added:'কার্টে যোগ হয়েছে',add:'কার্টে যোগ করুন',buy:'এখনই কিনুন',yc:'আপনার কার্ট',close:'বন্ধ',rm:'মুছুন',empty:'আপনার কার্ট খালি।',total:'মোট',order:'অর্ডার করুন',dt:'ডেলিভারির তথ্য',nm:'আপনার নাম',ph:'মোবাইল নম্বর',ad:'সম্পূর্ণ ঠিকানা',nt:'বিশেষ নির্দেশনা (ঐচ্ছিক)',pay:'পেমেন্ট',onDel:'ডেলিভারির সময়',gt:'সর্বমোট',conf:'অর্ডার নিশ্চিত করুন',e1:'আপনার নামটি লিখুন।',e2:'সঠিক মোবাইল নম্বর দিন (যেমন 01XXXXXXXXX)।',e3:'সম্পূর্ণ ঠিকানা লিখুন।',wait:'অনুগ্রহ করে অপেক্ষা করুন…',done:'অর্ডার সম্পন্ন হয়েছে',onum:'আপনার অর্ডার নম্বর',soon:'আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।',ok:'ঠিক আছে',fail:'অর্ডার জমা হয়নি। আবার চেষ্টা করুন অথবা',gethelp:'সহায়তা নিন',m1:'আসসালামু আলাইকুম, আমার একটি জিজ্ঞাসা ছিল।',m2:'আমি অর্ডার করতে পারছি না।',lg:'EN'}};
 let L='en';try{L=localStorage.getItem('rg_lang')==='bn'?'bn':'en'}catch(e){}
 const t=k=>TX[L][k];
 function paint(){document.documentElement.lang=L;document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t(e.dataset.i));document.querySelectorAll('[data-ph]').forEach(e=>e.placeholder=t(e.dataset.ph));document.querySelectorAll('[data-al]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.al)));$('#lg').textContent=t('lg');$('#wa').href=wl(t('m1'));$('#fh').href=$('#wa').href}
@@ -99,6 +110,7 @@ const sum=a=>a.reduce((t,x)=>t+x.p.price*x.q,0);
 function toast(m){const t=$('#tm');t.textContent=m;t.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display='none',1800)}
 function badge(){$('#cn').textContent=$('#cn2').textContent=bn(lines().reduce((t,x)=>t+x.q,0))}
 function draw(){
+  sMark();
   const k=$('#q').value.trim().toLowerCase(),v=P.filter(p=>p.on&&(!k||(p.name+' '+(p.desc||'')).toLowerCase().includes(k)));
   $('#cnt').textContent=v.length?bn(v.length)+(L==='bn'?'':' ')+t('items'):'';
   $('#g').innerHTML=v.length?v.map(p=>'<article class="p"><img loading="lazy" src="'+esc(BASE+p.img)+'" alt="'+esc(p.name)+'"><div class="pb"><b>'+esc(p.name)+'</b>'+(p.desc?'<small>'+esc(p.desc)+'</small>':'')+'<div class="pr">'+tk(p.price)+'</div><div class="ac"><button class="b1" data-a="add" data-id="'+esc(p.id)+'">'+t('add')+'</button><button class="b2" data-a="buy" data-id="'+esc(p.id)+'">'+t('buy')+'</button></div></div></article>').join(''):'<div class="em">'+t('none')+'</div>';
@@ -124,7 +136,7 @@ function checkout(items,fromCart){
   $('#ov').innerHTML='<div class="md"><div class="dh" style="padding:0 0 10px"><h3>'+t('dt')+'</h3><button class="x" data-a="close" aria-label="'+t('close')+'">×</button></div>'
   +'<div class="f"><label for="cn1">'+t('nm')+'</label><input id="cn1" autocomplete="name"></div><div class="f"><label for="cp">'+t('ph')+'</label><input id="cp" type="tel" inputmode="numeric" autocomplete="tel" placeholder="01XXXXXXXXX"></div>'
   +'<div class="f"><label for="ca">'+t('ad')+'</label><textarea id="ca" rows="3" maxlength="300" autocomplete="street-address"></textarea></div><div class="f"><label for="cm">'+t('nt')+'</label><input id="cm"></div>'
-  +'<div class="sm">'+items.map(x=>'<div><span>'+esc(x.p.name)+' × '+bn(x.q)+'</span><span>'+tk(x.p.price*x.q)+'</span></div>').join('')+'<div style="border-top:1px solid var(--bd);margin-top:6px;padding-top:6px"><span>'+t('pay')+'</span><span>'+t('onDel')+'</span></div><div style="font-weight:800"><span>'+t('gt')+'</span><span>'+tk(sum(items))+'</span></div></div>'
+  +'<div class="sm">'+items.map(x=>'<div><span>'+esc(x.p.name)+' × '+bn(x.q)+'</span><span>'+tk(x.p.price*x.q)+'</span></div>').join('')+'<div style="border-top:1px solid var(--bd);margin-top:6px;padding-top:6px"><span>'+t('del')+'</span><span>'+(ship(sum(items))?tk(ship(sum(items))):t('free'))+'</span></div><div><span>'+t('pay')+'</span><span>'+t('onDel')+'</span></div><div style="font-weight:800"><span>'+t('gt')+'</span><span>'+tk(sum(items)+ship(sum(items)))+'</span></div></div>'
   +'<div class="er" id="er"></div><button class="b3" id="go">'+t('conf')+'</button></div>';
   {const d=sg('rg_draft')||{};['cn1','cp','ca','cm'].forEach(i=>{if(d[i])$('#'+i).value=d[i]})}
   $('#go').onclick=async()=>{
@@ -135,8 +147,8 @@ function checkout(items,fromCart){
     const b=$('#go');b.disabled=true;b.textContent=t('wait');er.textContent='';
     try{
       if(items.length>40)throw new Error('x');
-      const r=crypto.getRandomValues(new Uint32Array(2)),d=new Date(),no='RG'+String(d.getFullYear()).slice(2)+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+String(r[0]%10000).padStart(4,'0'),sub=sum(items);
-      await setDoc(doc(db,'orders',no.toLowerCase()+r[1].toString(36)),{orderNo:no,name:name.slice(0,80),phone:ph.replace(/^\+?88/,''),area:'',address:ad.slice(0,300),note:$('#cm').value.trim().slice(0,400),items:items.map(x=>({name:x.p.name,qty:x.q,price:x.p.price})),subtotal:sub,delivery:0,total:sub,payment:'cod',status:'new',source:'shop',createdAt:serverTimestamp()});
+      const r=crypto.getRandomValues(new Uint32Array(2)),d=new Date(),no='RG'+String(d.getFullYear()).slice(2)+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+String(r[0]%10000).padStart(4,'0'),sub=sum(items),dl=ship(sub);
+      await setDoc(doc(db,'orders',no.toLowerCase()+r[1].toString(36)),{orderNo:no,name:name.slice(0,80),phone:ph.replace(/^\+?88/,''),area:'',address:ad.slice(0,300),note:$('#cm').value.trim().slice(0,400),items:items.map(x=>({name:x.p.name,qty:x.q,price:x.p.price})),subtotal:sub,delivery:dl,total:sub+dl,payment:'cod',status:'new',source:'shop',createdAt:serverTimestamp()});
       ss('rg_draft');if(fromCart){cart={};keep();badge()}
       $('#ov').innerHTML='<div class="md"><div class="ok"><div class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><h3>'+t('done')+'</h3><p>'+t('onum')+' <b>'+no+'</b>.<br>'+t('soon')+'</p><button class="b2" style="width:100%;padding:12px" data-a="close">'+t('ok')+'</button></div></div>';
     }catch(e){console.warn(e);b.disabled=false;b.textContent=t('conf');er.innerHTML=t('fail')+' <a href="'+wl(t('m2'))+'" target="_blank" rel="noopener">'+t('gethelp')+'</a>.'}
@@ -159,7 +171,15 @@ $('#lg').addEventListener('click',()=>{L=L==='bn'?'en':'bn';try{localStorage.set
 const shut=()=>{$('#spm').classList.remove('on');$('#sp').classList.remove('on');$('#sp').setAttribute('aria-expanded','false')};
 $('#sp').addEventListener('click',e=>{e.stopPropagation();const o=$('#spm').classList.toggle('on');$('#sp').classList.toggle('on',o);$('#sp').setAttribute('aria-expanded',o)});
 document.addEventListener('click',e=>{if(!e.target.closest('#spm'))shut()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){shut();close()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){shut();sOpen(false);close()}});
+const hh=()=>document.documentElement.style.setProperty('--hh',document.querySelector('header').offsetHeight+'px');
+const sOpen=o=>{$('#spn').classList.toggle('on',o);$('#sb').setAttribute('aria-expanded',o);if(o){hh();setTimeout(()=>$('#q').focus(),60)}else $('#q').blur()};
+function sMark(){const v=$('#q').value.trim();$('#sd').hidden=!v;$('#sx').hidden=!v}
+$('#sb').addEventListener('click',()=>sOpen(!$('#spn').classList.contains('on')));
+$('#sx').addEventListener('click',()=>{$('#q').value='';draw();$('#q').focus()});
+$('#q').addEventListener('keydown',e=>{if(e.key==='Enter')sOpen(false)});
+document.addEventListener('click',e=>{if(!e.target.closest('#spn,#sb'))sOpen(false)});
+addEventListener('resize',hh);addEventListener('load',hh);hh();
 $('#q').addEventListener('input',draw);
 let rs=null;try{const nv=performance.getEntriesByType('navigation')[0];if(nv&&nv.type==='back_forward')rs=sg('rg_ui')}catch(e){}
 fetch(BASE+'products.json?t='+Date.now()).then(r=>r.ok?r.json():[]).catch(()=>[]).then(d=>{P=Array.isArray(d)?d:[];if(rs)$('#q').value=rs.q||'';draw();badge();route();if(rs)requestAnimationFrame(()=>scrollTo(0,rs.y||0))});
