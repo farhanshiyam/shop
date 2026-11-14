@@ -123,7 +123,7 @@ function checkout(items,fromCart){
   $('#ov').className='ov on';
   $('#ov').innerHTML='<div class="md"><div class="dh" style="padding:0 0 10px"><h3>'+t('dt')+'</h3><button class="x" data-a="close" aria-label="'+t('close')+'">×</button></div>'
   +'<div class="f"><label for="cn1">'+t('nm')+'</label><input id="cn1" autocomplete="name"></div><div class="f"><label for="cp">'+t('ph')+'</label><input id="cp" type="tel" inputmode="numeric" autocomplete="tel" placeholder="01XXXXXXXXX"></div>'
-  +'<div class="f"><label for="ca">'+t('ad')+'</label><textarea id="ca" rows="3" autocomplete="street-address"></textarea></div><div class="f"><label for="cm">'+t('nt')+'</label><input id="cm"></div>'
+  +'<div class="f"><label for="ca">'+t('ad')+'</label><textarea id="ca" rows="3" maxlength="300" autocomplete="street-address"></textarea></div><div class="f"><label for="cm">'+t('nt')+'</label><input id="cm"></div>'
   +'<div class="sm">'+items.map(x=>'<div><span>'+esc(x.p.name)+' × '+bn(x.q)+'</span><span>'+tk(x.p.price*x.q)+'</span></div>').join('')+'<div style="border-top:1px solid var(--bd);margin-top:6px;padding-top:6px"><span>'+t('pay')+'</span><span>'+t('onDel')+'</span></div><div style="font-weight:800"><span>'+t('gt')+'</span><span>'+tk(sum(items))+'</span></div></div>'
   +'<div class="er" id="er"></div><button class="b3" id="go">'+t('conf')+'</button></div>';
   {const d=sg('rg_draft')||{};['cn1','cp','ca','cm'].forEach(i=>{if(d[i])$('#'+i).value=d[i]})}
@@ -134,9 +134,9 @@ function checkout(items,fromCart){
     if(ad.length<8)return er.textContent=t('e3');
     const b=$('#go');b.disabled=true;b.textContent=t('wait');er.textContent='';
     try{
-      const ow=await getDoc(doc(db,'site_public','rgce-shop'));if(!ow.exists())throw new Error('x');
-      const r=crypto.getRandomValues(new Uint32Array(2)),d=new Date(),no='RG'+String(d.getFullYear()).slice(2)+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+String(r[0]%10000).padStart(4,'0');
-      await setDoc(doc(db,'shop_orders',no.toLowerCase()+r[1].toString(36)),{ownerUid:ow.data().ownerUid,orderNo:no,name,phone:ph,address:ad,note:$('#cm').value.trim().slice(0,200),items:items.map(x=>({n:x.p.name,q:x.q,p:x.p.price})),total:sum(items),status:'new',createdAt:serverTimestamp()});
+      if(items.length>40)throw new Error('x');
+      const r=crypto.getRandomValues(new Uint32Array(2)),d=new Date(),no='RG'+String(d.getFullYear()).slice(2)+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+String(r[0]%10000).padStart(4,'0'),sub=sum(items);
+      await setDoc(doc(db,'orders',no.toLowerCase()+r[1].toString(36)),{orderNo:no,name:name.slice(0,80),phone:ph.replace(/^\+?88/,''),area:'',address:ad.slice(0,300),note:$('#cm').value.trim().slice(0,400),items:items.map(x=>({name:x.p.name,qty:x.q,price:x.p.price})),subtotal:sub,delivery:0,total:sub,payment:'cod',status:'new',source:'shop',createdAt:serverTimestamp()});
       ss('rg_draft');if(fromCart){cart={};keep();badge()}
       $('#ov').innerHTML='<div class="md"><div class="ok"><div class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><h3>'+t('done')+'</h3><p>'+t('onum')+' <b>'+no+'</b>.<br>'+t('soon')+'</p><button class="b2" style="width:100%;padding:12px" data-a="close">'+t('ok')+'</button></div></div>';
     }catch(e){console.warn(e);b.disabled=false;b.textContent=t('conf');er.innerHTML=t('fail')+' <a href="'+wl(t('m2'))+'" target="_blank" rel="noopener">'+t('gethelp')+'</a>.'}
