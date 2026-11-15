@@ -58,6 +58,7 @@ footer{padding-bottom:84px}
 .spm{position:fixed;right:10px;bottom:calc(64px + env(safe-area-inset-bottom));z-index:31;width:min(310px,calc(100% - 20px));background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:8px;box-shadow:0 12px 32px rgba(0,0,0,.25);display:none}.spm.on{display:block}
 .spm h4{margin:4px 8px 6px;font-size:.78rem;color:var(--mu);font-weight:700}.spm a{display:flex;gap:12px;align-items:center;padding:10px;border-radius:12px;text-decoration:none;color:var(--tx)}.spm a:hover{background:var(--bg)}
 .spm .ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;flex:none}.spm b{display:block;font-size:.92rem}.spm small{color:var(--mu);font-size:.78rem}
+.mt{background:#fff4d6;color:#5c3d00;border-bottom:1px solid #f0d58a;padding:10px 16px;text-align:center;font-weight:700;font-size:.92rem}.mt[hidden]{display:none}@media (prefers-color-scheme:dark){.mt{background:#3a2e10;color:#ffd987;border-color:#5a4720}}
 .tm{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ac);color:#fff;padding:10px 18px;border-radius:999px;z-index:60;font-size:.9rem;display:none}
 @media (prefers-color-scheme:dark){.tm{color:#0d1722}}
 @media (max-width:520px){.br small{display:none}.cb span{display:none}.grid{gap:12px}}
@@ -72,6 +73,7 @@ footer{padding-bottom:84px}
   <button class="cb" id="lg" type="button" aria-label="Language">বাংলা</button>
 </div></header>
 <div class="spn" id="spn" role="search"><div class="spi"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="q" type="search" data-ph="search" data-al="search" autocomplete="off" enterkeyhint="search"><button type="button" id="sx" class="x" data-al="close" hidden>×</button></div></div>
+<div class="mt" id="mt" role="status" hidden></div>
 <div class="hero"><h1 class="vh">Roza Gift Corner &amp; Electric</h1><img class="hl" src="roza-logo.png" alt="Roza Gift Corner &amp; Electric"><p data-i="tag"></p></div>
 <main><div class="sec"><h2 data-i="ours"></h2><span id="cnt"></span></div><div class="grid" id="g"><div class="em" data-i="loading"></div></div></main>
 <footer>© <span id="yr"></span> Roza Gift Corner &amp; Electric &nbsp;•&nbsp; <a id="fh" href="#" target="_blank" rel="noopener" data-i="help"></a> &nbsp;•&nbsp; <a href="https://farhanshiyam.github.io/due-checker/live-chat" data-i="lc"></a></footer>
@@ -81,7 +83,7 @@ footer{padding-bottom:84px}
 <div class="ov" id="ov"></div><div class="tm" id="tm"></div>
 <script type="module">
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import {getFirestore,doc,getDoc,setDoc,serverTimestamp} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+import {getFirestore,doc,getDoc,setDoc,onSnapshot,serverTimestamp} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 const HELP='8801319362189';
 /* delivery charge: 0 = free. Example: {charge:60,freeAbove:2000} -> ৳60, free for orders of ৳2000 or more */
 const SHIP={charge:0,freeAbove:0},ship=v=>SHIP.charge>0&&!(SHIP.freeAbove>0&&v>=SHIP.freeAbove)?SHIP.charge:0;
@@ -182,6 +184,9 @@ document.addEventListener('click',e=>{if(!e.target.closest('#spn,#sb'))sOpen(fal
 addEventListener('resize',hh);addEventListener('load',hh);hh();
 $('#q').addEventListener('input',draw);
 let rs=null;try{const nv=performance.getEntriesByType('navigation')[0];if(nv&&nv.type==='back_forward')rs=sg('rg_ui')}catch(e){}
+let MT=null;const mtPaint=()=>{const e=$('#mt'),m=MT&&MT.on===true?(L==='bn'?(MT.msgBn||MT.msgEn):(MT.msgEn||MT.msgBn)):'';e.textContent=m||'';e.hidden=!m;try{hh()}catch(x){}};
+try{onSnapshot(doc(db,'site_public','shop-site'),d=>{MT=d.exists()?d.data():null;mtPaint()},e=>console.warn('notice',e))}catch(e){}
+$('#lg').addEventListener('click',mtPaint);
 fetch(BASE+'products.json?t='+Date.now()).then(r=>r.ok?r.json():[]).catch(()=>[]).then(d=>{P=Array.isArray(d)?d:[];if(rs)$('#q').value=rs.q||'';draw();badge();route();if(rs)requestAnimationFrame(()=>scrollTo(0,rs.y||0))});
 </script>
 </body>
