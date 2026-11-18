@@ -4,29 +4,136 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Roza Gift Corner &amp; Electric</title>
-<link rel="icon" type="image/png" href="roza-icon-192.png"><link rel="apple-touch-icon" href="roza-icon-192.png"><meta name="theme-color" content="#ee6f7b">
+<link rel="icon" type="image/png" href="roza-icon-192.png"><link rel="apple-touch-icon" href="roza-icon-192.png"><meta name="theme-color" content="#1f4e79">
 <meta name="description" content="Gift items and electrical products - Roza Gift Corner &amp; Electric">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <style>
-:root{--bg:#f7f6fb;--card:#fff;--tx:#1c1b45;--mu:#6b7280;--ac:#1c1b45;--gd:#ee6f7b;--bd:#e2e8f0;--ok:#16794a;--er:#b42318}
-@media (prefers-color-scheme:dark){:root{--bg:#0d1722;--card:#15253a;--tx:#e8eef5;--mu:#9fb0c3;--ac:#b9c0ff;--gd:#ff8d97;--bd:#26384f;--ok:#4cc38a;--er:#ff8a80}}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI","Noto Sans Bengali",system-ui,Arial,sans-serif;line-height:1.5}
-button{font:inherit;cursor:pointer}a{color:inherit}
-header{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--bd)}
-.hd{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
-.br{font-weight:800;font-size:1.05rem;color:var(--ac);line-height:1.15}.br small{display:block;font-weight:600;font-size:.7rem;color:var(--gd);letter-spacing:.08em;text-transform:uppercase}
-.sr{flex:1;min-width:0}.sr input{width:100%;padding:10px 14px;border:1px solid var(--bd);border-radius:999px;background:var(--bg);color:var(--tx);font:inherit}
-.spn{position:fixed;left:0;right:0;top:var(--hh,60px);z-index:19;background:var(--card);border-bottom:1px solid var(--bd);padding:10px 16px;transform:translateY(-14px);opacity:0;visibility:hidden;transition:transform .2s,opacity .2s,visibility .2s}
-.spn.on{transform:none;opacity:1;visibility:visible;box-shadow:0 10px 22px rgba(28,27,69,.12)}
-.spi{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--bd);border-radius:999px;padding:0 8px 0 14px;color:var(--mu)}.spi:focus-within{border-color:var(--gd)}
-.spi input{flex:1;min-width:0;border:0;background:transparent;color:var(--tx);font:inherit;font-size:16px;padding:12px 2px;outline:0}
-#sd{top:6px;right:6px;min-width:10px;width:10px;height:10px;padding:0}#sd[hidden]{display:none}
-.cb{position:relative;border:1px solid var(--bd);background:var(--card);color:var(--ac);border-radius:12px;padding:9px 12px;display:flex;align-items:center;gap:6px;font-weight:700}
-.cb i{position:absolute;top:-7px;right:-7px;background:var(--gd);color:#14263a;font-style:normal;font-size:.72rem;min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;padding:0 5px;font-weight:800}
-svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.hero{background:linear-gradient(135deg,#fff1f3,#eceeff);text-align:center;padding:26px 16px 22px}@media (prefers-color-scheme:dark){.hero{background:linear-gradient(135deg,#1a2740,#1b2038)}}
-.hl{background:#fff;border-radius:20px;padding:10px 20px;width:min(300px,82%);height:auto;box-shadow:0 6px 20px rgba(28,27,69,.12)}.hero p{margin:12px 0 0;color:var(--mu)}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.br{display:flex;align-items:center;gap:10px;text-decoration:none}.br img{width:40px;height:40px;border-radius:10px;flex:none}
-main{max-width:1100px;margin:0 auto;padding:22px 16px 90px}
+
+/* ===== Roza main-app look: same palette, header, hero and footer as the RGCE SparkDesk app ===== */
+:root{--bg:#f4f5f7;--panel:#fff;--panel-alt:#f6f8fa;--border:#d0d7de;--border-strong:#9ca3af;--text:#1f2328;--muted:#57606a;--link:#0969da;--primary:#1f4e79;--primary-hover:#163d5e;--primary-light:#f0f6fc;--success:#1a7f37;--danger:#cf222e;--warning:#bf8700;--gold:#d4a72c;--input-bg:#fff;--input-focus:#0969da;--footer-bg:#24292f;--footer-text:#c9d1d9;--footer-muted:#8b949e;--shadow-sm:0 1px 2px rgba(31,35,40,.06);--shadow-md:0 4px 12px rgba(31,35,40,.10);--shadow-lg:0 8px 24px rgba(31,35,40,.14);--rh-navy:#0f2d4a;--rh-navy2:#1f4e79;--rh-gold:#d4a72c}
+body.dark-mode{--bg:#14181f;--panel:#1a1e26;--panel-alt:#20252d;--border:#2b3038;--border-strong:#434a54;--text:#e6edf3;--muted:#9ca7b3;--link:#7cb8e8;--primary:#4a90c4;--primary-hover:#5da1d4;--primary-light:#1f2937;--success:#5cb87a;--danger:#e57373;--warning:#d4a843;--input-bg:#14181f;--input-focus:#7cb8e8;--footer-bg:#0e1218;--footer-text:#b8c0c9;--footer-muted:#7a838d;--shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 4px 12px rgba(0,0,0,.5);--shadow-lg:0 8px 24px rgba(0,0,0,.6)}
+body{--card:var(--panel);--tx:var(--text);--mu:var(--muted);--ac:var(--primary);--gd:var(--gold);--bd:var(--border);--ok:var(--success);--er:var(--danger)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"NotoBnWeb","Segoe UI","Noto Sans Bengali",-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;font-size:15px;line-height:1.5;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer}a{color:inherit}svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wrap{width:calc(100% - 40px);max-width:1320px;margin:20px auto 0}
+.wrap.grow{flex:1}
+/* header (same structure as the main app) */
+.hdr2{background:var(--panel);color:var(--text);border-bottom:1px solid var(--border);font-size:13px;position:sticky;top:0;z-index:600;box-shadow:var(--shadow-sm)}
+.hdr2-row{display:flex;align-items:center;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding:6px 20px}
+.hdr2-top{min-height:68px;border-bottom:1px solid var(--border);flex-wrap:nowrap;gap:10px 18px}
+.hdr2-sub{min-height:44px;background:var(--panel-alt);font-size:12px}
+.hdr2-group{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.dcu-brand{display:flex;align-items:center;gap:12px;flex:none;min-width:0;text-decoration:none;color:inherit}
+.dcu-brand img{height:46px;width:46px;border-radius:10px;flex:none;background:#fff}
+.dcu-brand b{display:block;font-weight:700;font-size:16.5px;line-height:1.2;color:var(--text)}
+.dcu-brand small{display:block;color:var(--muted);font-size:12.5px;line-height:1.2}
+.dcu-nav{display:flex;gap:2px;flex:1;justify-content:flex-start;margin-left:8px;min-width:0}
+.dcu-nav-item{position:relative}
+.dcu-nav-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 10px;border:0;border-radius:8px;background:transparent;color:var(--muted);font:500 14px/1.2 inherit;font-family:inherit;cursor:pointer;white-space:nowrap;text-decoration:none}
+.dcu-nav-btn[aria-haspopup]::after{content:"";width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.7}
+.dcu-nav-item:hover>.dcu-nav-btn,.dcu-nav-item.open>.dcu-nav-btn,.dcu-nav-btn:focus-visible,.dcu-nav-btn.on{background:var(--panel-alt);color:var(--text)}
+.dcu-menu{display:none;position:absolute;left:0;top:calc(100% + 2px);min-width:230px;padding:8px;background:var(--panel);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow-lg);z-index:700}
+.dcu-nav-item:hover>.dcu-menu,.dcu-nav-item.open>.dcu-menu,.dcu-nav-item:focus-within>.dcu-menu{display:block}
+.dcu-menu a{display:flex;align-items:center;gap:10px;width:100%;padding:9px 10px;border-radius:8px;color:var(--text);font:500 14px/1.3 inherit;text-decoration:none}
+.dcu-menu a:hover,.dcu-menu a:focus-visible{background:var(--primary-light)}
+.dcu-menu a i{width:18px;text-align:center;color:var(--muted);flex:none}
+.hdr-pill{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;border-radius:999px;font:600 13px/1.2 inherit;font-family:inherit;cursor:pointer;border:1px solid transparent;text-decoration:none;position:relative;transition:opacity .15s,background .15s}
+.hdr-pill:active{transform:scale(.96)}.hdr-pill i{font-size:12px}
+.hdr-pill-gold{background:var(--gold);color:#3b2a00;border-color:var(--gold)}.hdr-pill-gold:hover{opacity:.9}
+.hdr-pill-gold b{background:#3b2a00;color:#fff;font-size:11px;min-width:19px;height:19px;border-radius:10px;display:inline-grid;place-items:center;padding:0 5px}
+.hdr-pill-outline{background:transparent;color:var(--text);border-color:var(--border-strong)}.hdr-pill-outline i{color:var(--muted)}.hdr-pill-outline:hover{background:var(--panel-alt)}
+.dcu-menu-btn{display:none}
+.hdr-chip{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;background:var(--panel);border:1px solid var(--border);border-radius:8px;color:var(--text);font:600 12px/1.2 inherit;font-family:inherit;cursor:pointer;min-height:30px}.hdr-chip:hover{background:var(--bg)}
+.hdr-chip i{color:var(--muted);font-size:12px}
+.hdr-search{flex:1 1 280px;max-width:520px;display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:0 6px 0 11px;min-height:32px}
+.hdr-search:focus-within{border-color:var(--input-focus);box-shadow:0 0 0 3px rgba(9,105,218,.14)}.hdr-search>i{color:var(--muted);font-size:12px}
+.hdr-search input{flex:1;min-width:0;border:0;background:transparent;color:var(--text);font:inherit;font-size:14px;padding:6px 0;outline:0}
+.hdr-search button{background:none;border:0;color:var(--muted);font-size:20px;line-height:1;padding:0 6px}.hdr-search button[hidden]{display:none}
+.dark-toggle-label{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);cursor:pointer;padding:5px 10px;background:var(--panel);border:1px solid var(--border);border-radius:8px;min-height:30px}.dark-toggle-label:hover{color:var(--text)}
+.dark-toggle-label input{width:14px;height:14px;accent-color:var(--gold);cursor:pointer}
+@media(max-width:1000px){
+  .hdr2{position:relative}
+  .hdr2-row{padding:6px 12px}.hdr2-top{flex-wrap:wrap}
+  .dcu-menu-btn{display:inline-flex}
+  .dcu-nav{display:none;order:9;flex:1 0 100%;flex-direction:column;gap:6px;margin:0;padding:8px 0 10px;border-top:1px solid var(--border);max-height:68vh;overflow:auto}
+  .dcu-nav.open{display:flex}
+  .dcu-nav-btn{width:100%;justify-content:space-between;font-weight:600;color:var(--text)}
+  .dcu-nav-btn[aria-haspopup]::after{display:none}
+  .dcu-menu{display:block;position:static;box-shadow:none;border:0;padding:0 0 4px 8px;min-width:0;background:transparent}
+  .hdr-pill{padding:7px 12px}
+  .dcu-brand{flex:1}
+}
+@media(max-width:520px){.dcu-brand b{font-size:14.5px}.dcu-brand small{font-size:11.5px}.dcu-brand img{height:40px;width:40px}.hdr-pill-gold span{display:none}.hdr-search{flex-basis:100%;max-width:none}}
+/* welcome hero (light: white card, dark: navy gradient, like the main app) */
+.hero{position:relative;overflow:hidden;border-radius:22px;margin-bottom:20px;background:var(--panel);color:var(--text);border:1px solid var(--border);box-shadow:var(--shadow-md)}
+.hero .in{position:relative;padding:44px 32px 40px}
+.eyebrow{display:inline-block;color:#8a6a0a;font-weight:700;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.hero h1{margin:0;font-size:clamp(28px,6vw,48px);line-height:1.15;font-weight:800;max-width:16ch;color:var(--rh-navy)}
+.hero p{margin:14px 0 0;max-width:46ch;color:var(--muted);font-size:clamp(15px,2.6vw,17px)}
+.gl{margin-top:24px;height:3px;width:84px;background:var(--rh-gold);border-radius:3px}
+body.dark-mode .hero{background:linear-gradient(135deg,var(--rh-navy) 0%,var(--rh-navy2) 100%);color:#fff;border-color:transparent}
+body.dark-mode .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(to bottom,#000,transparent);mask-image:linear-gradient(to bottom,#000,transparent)}
+body.dark-mode .eyebrow{color:var(--rh-gold)}body.dark-mode .hero h1{color:#fff}body.dark-mode .hero p{color:#fff;opacity:.85}
+.rh-acts{--rc:#0f2d4a;display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;position:relative}
+body.dark-mode .rh-acts{--rc:#e6c35c}
+.rh-b{display:inline-flex;align-items:stretch;padding:0;font-weight:700;font-size:14.5px;line-height:1.2;white-space:nowrap;cursor:pointer;color:var(--rc);background:transparent;border:2px solid var(--rc);border-radius:10px;overflow:hidden;text-decoration:none;transition:background .15s,color .15s}
+.rh-b i{display:inline-flex;align-items:center;padding:0 0 0 16px;font-size:15px}.rh-b span{display:inline-flex;align-items:center;padding:10px 18px 10px 8px}
+.rh-b:hover{background:var(--rc);color:#fff}body.dark-mode .rh-b:hover{color:#0b1117}.rh-b:focus-visible{outline:3px solid var(--rc);outline-offset:3px}
+@media(max-width:600px){.hero .in{padding:32px 20px 28px}.rh-b{width:100%}.rh-b span{flex:1}}
+
+/* slim welcome strip (replaces the big hero) */
+.hero{border-radius:14px;margin-bottom:16px;border-left:5px solid var(--rh-gold);box-shadow:var(--shadow-sm)}
+.hero .in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 24px;padding:14px 20px}
+.hero .ht{min-width:0;flex:1 1 320px}
+.hero .eyebrow{font-size:11px;letter-spacing:1.6px;margin:0 0 2px}
+.hero h1{font-size:clamp(18px,3.2vw,23px);line-height:1.25;max-width:none}
+.hero p{margin:2px 0 0;font-size:13.5px;max-width:none}
+.hero .gl{display:none}
+.rh-acts{margin-top:0;gap:8px}
+.rh-b{font-size:13px;border-width:1.5px;border-radius:9px}
+.rh-b i{padding-left:12px;font-size:13px}.rh-b span{padding:7px 13px 7px 7px}
+@media(max-width:600px){.hero .in{padding:12px 14px}.rh-acts{width:100%}.rh-b{width:auto;flex:1 1 calc(50% - 8px)}.rh-b span{flex:1;justify-content:center}}
+/* product area restyled to the main-app cards */
+.sec h2{font-size:1.2rem}.sec span{color:var(--muted)}
+.p{border-radius:14px;box-shadow:var(--shadow-sm)}.p:hover{box-shadow:var(--shadow-md)}
+.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.pr{color:var(--primary)}
+.b1{background:var(--primary);border-color:var(--primary);color:#fff}.b2{color:var(--primary);border-color:var(--primary)}
+.b3{background:var(--gold);border-color:var(--gold);color:#3b2a00}
+.f input,.f textarea{background:var(--input-bg)}.f input:focus,.f textarea:focus{outline:0;border-color:var(--input-focus);box-shadow:0 0 0 3px rgba(9,105,218,.14)}
+.mt{margin:0 0 20px;max-width:none}
+body.dark-mode .mt{background:#3a2e10;color:#ffd987;border-color:#5a4720}
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin:6px 0 14px}
+.bar{background:var(--panel)}
+@media(min-width:821px){.bar,.spm{display:none!important}.tm{bottom:30px}}
+/* footer (same grid as the main app) */
+.app-footer{background:var(--footer-bg);color:var(--footer-text);font-size:13px;display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-areas:"brand links social" "contact links badges" "copy copy toggles";column-gap:40px;row-gap:14px;padding:36px max(20px,calc((100% - 1320px)/2)) 20px;margin-top:30px}
+.app-foot-brand{grid-area:brand;display:flex;align-items:center;gap:12px}
+.app-foot-brand img{height:50px;width:50px;border-radius:10px;background:#fff}
+.app-foot-brand b{display:block;font-size:18px;font-weight:700;color:#fff;line-height:1.2}.app-foot-brand small{color:var(--footer-muted);font-size:13px}
+.footer-links,.footer-social,.footer-badges{display:flex}
+.footer-links{grid-area:links;flex-direction:column;align-items:flex-start;gap:6px}
+.footer-links a{color:var(--footer-text);font-size:14.5px;font-weight:500;text-decoration:none}.footer-links a:hover{color:#fff}
+.footer-links::before,.footer-social::before,.footer-badges::before{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
+.footer-social::before,.footer-badges::before{flex-basis:100%}
+.footer-links::before{content:"Explore"}.footer-social::before{content:"Follow us"}.footer-badges::before{content:"Services"}
+html[lang="bn"] .footer-links::before{content:"অন্বেষণ"}html[lang="bn"] .footer-social::before{content:"আমাদের অনুসরণ করুন"}html[lang="bn"] .footer-badges::before{content:"সেবা"}
+.footer-contact{grid-area:contact;display:flex;flex-direction:column;align-items:flex-start;gap:8px;font-size:14px;color:var(--footer-text)}
+.footer-contact i{color:var(--gold);margin-right:6px;width:14px;text-align:center}.footer-contact a{color:inherit;font-weight:700;text-decoration:underline}
+.footer-social{grid-area:social;flex-wrap:wrap;align-content:flex-start;justify-content:flex-start;gap:12px 16px;font-size:16px}
+.footer-social a{color:var(--footer-muted);transition:color .15s,transform .15s;text-decoration:none}.footer-social a:hover{color:#fff;transform:translateY(-2px)}
+.footer-badges{grid-area:badges;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.badge{padding:3px 10px;font-size:12px;color:var(--footer-muted);background:rgba(255,255,255,.06);border-radius:999px}
+.footer-copy{grid-area:copy;font-size:13.5px;color:var(--footer-muted);align-self:center}.footer-copy a{color:var(--gold);font-weight:600;text-decoration:none}.footer-copy a:hover{color:#fff}
+.app-foot-toggles{grid-area:toggles;display:flex;gap:8px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+.app-foot-toggles button{min-height:34px;padding:0 14px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:transparent;color:#fff;font:500 13px/1 inherit;font-family:inherit;cursor:pointer}.app-foot-toggles button:hover{background:rgba(255,255,255,.12)}
+@media(max-width:820px){.app-footer{grid-template-columns:1fr 1fr;grid-template-areas:"brand brand" "contact contact" "links social" "badges badges" "copy copy" "toggles toggles";column-gap:24px;padding-bottom:84px}.app-foot-toggles{justify-content:flex-start}}
+@media(max-width:480px){.app-footer{grid-template-columns:1fr;grid-template-areas:"brand" "contact" "links" "social" "badges" "copy" "toggles"}}
+@media(max-width:520px){.grid{gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}.cb span{display:none}}
+main{padding:8px 0 28px}
 .sec{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}.sec h2{margin:0;font-size:1.15rem}.sec span{color:var(--mu);font-size:.85rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
 .p{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}.p:hover{box-shadow:0 8px 24px rgba(15,45,74,.12);transform:translateY(-2px)}
@@ -35,10 +142,7 @@ main{max-width:1100px;margin:0 auto;padding:22px 16px 90px}
 .pr{font-weight:800;color:var(--ac);font-size:1.05rem;margin:2px 0 6px}
 .ac{margin-top:auto;display:grid;gap:6px}
 .b1,.b2,.b3{border-radius:10px;padding:9px 10px;font-weight:700;font-size:.85rem;border:1px solid var(--ac)}
-.b1{background:var(--ac);color:#fff}.b2{background:transparent;color:var(--ac)}.b3{background:var(--gd);border-color:var(--gd);color:#14263a;width:100%;padding:13px;font-size:1rem}
-@media (prefers-color-scheme:dark){.b1{color:#0d1722}}
 .em{text-align:center;color:var(--mu);padding:40px 10px;grid-column:1/-1}
-footer{border-top:1px solid var(--bd);background:var(--card);text-align:center;padding:22px 16px;color:var(--mu);font-size:.85rem}footer a{color:var(--ac);font-weight:700;text-decoration:none}
 .ov{position:fixed;inset:0;background:rgba(8,16,28,.55);z-index:40;display:none}.ov.on{display:block}
 .dr{position:absolute;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--card);display:flex;flex-direction:column}
 .dh{padding:14px 16px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center}.dh h3{margin:0}.x{background:none;border:0;color:var(--tx);font-size:1.5rem;line-height:1}
@@ -54,30 +158,85 @@ footer{border-top:1px solid var(--bd);background:var(--card);text-align:center;p
 .ok{text-align:center;padding:10px 0}.ok .ck{width:64px;height:64px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;margin:0 auto 12px}.ok .ck svg{width:34px;height:34px;stroke-width:3}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--bd);display:grid;grid-template-columns:repeat(3,1fr);padding-bottom:env(safe-area-inset-bottom)}
 .bar a,.bar button{background:none;border:0;cursor:pointer;font:inherit;position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 4px 8px;color:var(--mu);text-decoration:none;font-size:.72rem;font-weight:600}.bar a.on,.bar button.on{color:var(--ac)}.bar a i{position:absolute;top:4px;left:calc(50% + 6px);background:var(--gd);color:#14263a;font-style:normal;font-size:.65rem;min-width:17px;height:17px;border-radius:9px;display:grid;place-items:center;padding:0 4px;font-weight:800}
-footer{padding-bottom:84px}
 .spm{position:fixed;right:10px;bottom:calc(64px + env(safe-area-inset-bottom));z-index:31;width:min(310px,calc(100% - 20px));background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:8px;box-shadow:0 12px 32px rgba(0,0,0,.25);display:none}.spm.on{display:block}
 .spm h4{margin:4px 8px 6px;font-size:.78rem;color:var(--mu);font-weight:700}.spm a{display:flex;gap:12px;align-items:center;padding:10px;border-radius:12px;text-decoration:none;color:var(--tx)}.spm a:hover{background:var(--bg)}
 .spm .ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;flex:none}.spm b{display:block;font-size:.92rem}.spm small{color:var(--mu);font-size:.78rem}
-.mt{max-width:760px;margin:26px auto;padding:34px 22px;text-align:center;background:#fff4d6;color:#5c3d00;border:2px solid #f0d58a;border-radius:20px;font-weight:800;font-size:clamp(1.3rem,4.6vw,2rem);line-height:1.5;box-shadow:0 8px 24px rgba(92,61,0,.12)}.mt::before{content:"\1F6E0\FE0F";display:block;font-size:2.6rem;margin-bottom:10px}.mt[hidden]{display:none}@media (prefers-color-scheme:dark){.mt{background:#3a2e10;color:#ffd987;border-color:#5a4720}}
+.mt{max-width:760px;margin:26px auto;padding:34px 22px;text-align:center;background:#fff4d6;color:#5c3d00;border:2px solid #f0d58a;border-radius:20px;font-weight:800;font-size:clamp(1.3rem,4.6vw,2rem);line-height:1.5;box-shadow:0 8px 24px rgba(92,61,0,.12)}.mt::before{content:"\1F6E0\FE0F";display:block;font-size:2.6rem;margin-bottom:10px}.mt[hidden]{display:none}
 body.mtn main,body.mtn #sb,body.mtn #cbtn,body.mtn #spn,body.mtn .bar a[data-r="cart"],body.mtn .ov{display:none!important}
 .tm{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ac);color:#fff;padding:10px 18px;border-radius:999px;z-index:60;font-size:.9rem;display:none}
-@media (prefers-color-scheme:dark){.tm{color:#0d1722}}
-@media (max-width:520px){.br small{display:none}.cb span{display:none}.grid{gap:12px}}
 </style>
 </head>
 <body>
-<header><div class="hd">
-  <a class="br" data-r="" href="#"><img src="roza-icon-192.png" alt="" width="40" height="40"><span>Roza Gift Corner<small>&amp; Electric</small></span></a>
-  <div style="flex:1"></div>
-  <button class="cb" id="sb" type="button" data-al="search" aria-expanded="false" aria-controls="spn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><i id="sd" hidden></i></button>
-  <button class="cb" id="cbtn" data-al="cart"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span data-i="cart"></span><i id="cn">0</i></button>
-  <button class="cb" id="lg" type="button" aria-label="Language">বাংলা</button>
-</div></header>
-<div class="spn" id="spn" role="search"><div class="spi"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="q" type="search" data-ph="search" data-al="search" autocomplete="off" enterkeyhint="search"><button type="button" id="sx" class="x" data-al="close" hidden>×</button></div></div>
-<div class="hero"><h1 class="vh">Roza Gift Corner &amp; Electric</h1><img class="hl" src="roza-logo.png" alt="Roza Gift Corner &amp; Electric"><p data-i="tag"></p></div>
-<div class="mt" id="mt" role="status" hidden></div>
-<main><div class="sec"><h2 data-i="ours"></h2><span id="cnt"></span></div><div class="grid" id="g"><div class="em" data-i="loading"></div></div></main>
-<footer>© <span id="yr"></span> Roza Gift Corner &amp; Electric &nbsp;•&nbsp; <a id="fh" href="#" target="_blank" rel="noopener" data-i="help"></a> &nbsp;•&nbsp; <a href="https://farhanshiyam.github.io/due-checker/live-chat" data-i="lc"></a></footer>
+<script>try{var _d=localStorage.getItem('rg_dark');if(_d===null?matchMedia('(prefers-color-scheme:dark)').matches:_d==='1')document.body.classList.add('dark-mode')}catch(e){}</script>
+<header class="hdr2">
+  <div class="hdr2-row hdr2-top">
+    <a class="dcu-brand" data-r="" href="#" title="Home"><img src="roza-icon-192.png" alt="" width="46" height="46"><span><b>Roza Gift Corner &amp; Electric</b><small data-i="brandSub"></small></span></a>
+    <button type="button" class="hdr-pill hdr-pill-outline dcu-menu-btn" id="mBtn" aria-expanded="false" aria-controls="nav"><i class="fas fa-bars" aria-hidden="true"></i><span data-i="menu"></span></button>
+    <nav class="dcu-nav" id="nav" aria-label="Main">
+      <div class="dcu-nav-item"><a class="dcu-nav-btn" data-r="" href="#" data-i="home"></a></div>
+      <div class="dcu-nav-item"><a class="dcu-nav-btn" href="#products" id="navProd" data-i="ours"></a></div>
+      <div class="dcu-nav-item"><a class="dcu-nav-btn" data-r="cart" href="#" data-i="cart"></a></div>
+      <div class="dcu-nav-item"><a class="dcu-nav-btn" href="https://farhanshiyam.github.io/due-checker/" data-i="dueC"></a></div>
+      <div class="dcu-nav-item"><button type="button" class="dcu-nav-btn" aria-haspopup="true" aria-expanded="false" id="supBtn" data-i="support"></button>
+        <div class="dcu-menu">
+          <a href="https://farhanshiyam.github.io/due-checker/live-chat"><i class="fas fa-comments" aria-hidden="true"></i><span data-i="lc"></span></a>
+          <a id="waH" href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a>
+          <a href="tel:+8801715986646"><i class="fas fa-phone" aria-hidden="true"></i><span data-i="call"></span></a>
+        </div></div>
+    </nav>
+    <div class="hdr2-group hdr2-right">
+      <a class="hdr-pill hdr-pill-gold" id="cbtn" data-r="cart" href="#"><i class="fas fa-cart-shopping" aria-hidden="true"></i><span data-i="cart"></span><b id="cn">0</b></a>
+    </div>
+  </div>
+  <div class="hdr2-row hdr2-sub">
+    <div class="hdr-search" role="search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i><input id="q" type="search" data-ph="search" data-al="search" autocomplete="off" enterkeyhint="search"><button type="button" id="sx" data-al="close" hidden>×</button></div>
+    <div class="hdr2-group hdr2-right">
+      <button type="button" class="hdr-chip" id="lg" aria-label="Language">বাংলা</button>
+      <label class="dark-toggle-label"><input type="checkbox" id="dk"> <span data-i="dark"></span></label>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <section class="hero"><div class="in">
+    <div class="ht"><span class="eyebrow" data-i="welcome"></span>
+    <h1 data-i="wt"></h1>
+    <p data-i="tag"></p></div>
+    <div class="rh-acts">
+      <a class="rh-b" href="#products" id="hShop"><i class="fas fa-bag-shopping" aria-hidden="true"></i><span data-i="shopNow"></span></a>
+      <a class="rh-b" data-r="cart" href="#"><i class="fas fa-cart-shopping" aria-hidden="true"></i><span data-i="cart"></span></a>
+      <a class="rh-b" href="https://farhanshiyam.github.io/due-checker/live-chat"><i class="fas fa-comments" aria-hidden="true"></i><span data-i="lc"></span></a>
+      <a class="rh-b" href="https://farhanshiyam.github.io/due-checker/"><i class="fas fa-receipt" aria-hidden="true"></i><span data-i="dueC"></span></a>
+    </div>
+  </div></section>
+  <div class="mt" id="mt" role="status" hidden></div>
+</div>
+<div class="wrap grow"><main id="products"><div class="sec"><h2 data-i="ours"></h2><span id="cnt"></span></div><div class="grid" id="g"><div class="em" data-i="loading"></div></div></main></div>
+<footer class="app-footer">
+  <div class="app-foot-brand"><img src="roza-icon-192.png" alt=""><div><b>Roza Gift Corner &amp; Electric</b><small data-i="brandSub"></small></div></div>
+  <div class="footer-links">
+    <a data-r="" href="#" data-i="home"></a>
+    <a href="#products" data-i="ours"></a>
+    <a data-r="cart" href="#" data-i="cart"></a>
+    <a href="https://farhanshiyam.github.io/due-checker/" data-i="dueC"></a>
+    <a href="https://farhanshiyam.github.io/due-checker/live-chat" data-i="lc"></a>
+    <a id="fh" href="#" target="_blank" rel="noopener" data-i="help"></a>
+  </div>
+  <div class="footer-contact">
+    <span><i class="fas fa-phone"></i> +8801715986646</span>
+    <span><i class="fas fa-map-marker-alt"></i> Moshjid Market, Naohata Mor, Mohadevpur, Naogaon</span>
+    <span><i class="fas fa-comments"></i> <a href="https://farhanshiyam.github.io/due-checker/live-chat" data-i="lc"></a></span>
+    <span><i class="fas fa-clock"></i> <span data-i="hours"></span></span>
+  </div>
+  <div class="footer-social">
+    <a href="https://web.facebook.com/profile.php?id=61569560136374" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://wa.me/8801715986646" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/roza_gift_corner/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Rozagiftcornerandelectric" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
+  </div>
+  <div class="footer-badges"><span class="badge" data-i="svc1"></span><span class="badge" data-i="svc2"></span><span class="badge" data-i="lc"></span></div>
+  <div class="footer-copy">© <span id="yr"></span> Roza Gift Corner &amp; Electric | Powered by <a href="https://web.facebook.com/farhantanzidshiyam" target="_blank" rel="noopener">Farhan Tanzid Shiyam</a></div>
+  <div class="app-foot-toggles"><button type="button" id="dkF">◐ <span data-i="dark"></span></button><button type="button" data-l="bn">বাংলা</button><button type="button" data-l="en">English</button></div>
+</footer>
 
 <nav class="bar" aria-label="Quick links"><a data-r="" href="#"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span data-i="home"></span></a><a data-r="cart" href="#"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><i id="cn2">0</i><span data-i="cart"></span></a><button type="button" id="sp" aria-haspopup="true" aria-expanded="false" aria-controls="spm"><svg viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 15a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2zM3 15a2 2 0 0 0 2 2h1v-5H5a2 2 0 0 0-2 2z"/></svg><span data-i="support"></span></button></nav>
 <div class="spm" id="spm"><h4 data-i="hw"></h4><a id="lc" href="https://farhanshiyam.github.io/due-checker/live-chat"><span class="ic" style="background:var(--ac);color:var(--bg)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="3"/><path d="M8 21l3-4"/><path d="M8 9h8M8 12h5"/></svg></span><span><b data-i="lc"></b><small data-i="lcs"></small></span></a><a id="wa" href="#" target="_blank" rel="noopener"><span class="ic" style="background:#25d366;color:#fff"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></span><span><b>WhatsApp</b><small data-i="was"></small></span></a></div>
@@ -98,11 +257,11 @@ document.addEventListener('input',e=>{if(/^(cn1|cp|ca|cm)$/.test(e.target.id)){c
 const db=getFirestore(initializeApp({apiKey:"AIzaSyCZOUCY2_19d6g5pnuVmEi1prfc-wBeN9w",authDomain:"rgce-sparkdesk-2.firebaseapp.com",projectId:"rgce-sparkdesk-2",appId:"1:1057222039031:web:f82f411076a579b905caf2"}));
 const $=s=>document.querySelector(s),esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const wl=m=>'https://wa.me/'+HELP+(m?'?text='+encodeURIComponent(m):'');
-const TX={en:{search:'Search products…',cart:'Cart',tag:'Your trusted store for gifts and electricals',ours:'Our Products',loading:'Loading…',help:'Help & Inquiries',support:'Support',del:'Delivery',free:'Free',hw:'How can we help?',lcs:'Chat with us online',was:'Message us on WhatsApp',home:'Home',wab:'WhatsApp',lc:'Live Chat',wa2:'Chat on WhatsApp',items:'products',none:'No products found.',added:'Added to cart',add:'Add to Cart',buy:'Buy Now',yc:'Your Cart',close:'Close',rm:'Remove',empty:'Your cart is empty.',total:'Total',order:'Place Order',dt:'Delivery Details',nm:'Full name',ph:'Mobile number',ad:'Full address',nt:'Notes (optional)',pay:'Payment',onDel:'On delivery',gt:'Grand total',conf:'Confirm Order',e1:'Please enter your name.',e2:'Enter a valid mobile number (e.g. 01XXXXXXXXX).',e3:'Please enter your full address.',wait:'Please wait…',done:'Order placed',onum:'Your order number is',soon:'Our representative will contact you shortly.',ok:'OK',fail:'Your order could not be submitted. Please try again or',gethelp:'contact support',m1:'Hello, I have an inquiry.',m2:'I am unable to place an order.',lg:'বাংলা'},
-bn:{search:'পণ্য খুঁজুন…',cart:'কার্ট',tag:'উপহার ও ইলেকট্রিক পণ্যের বিশ্বস্ত ঠিকানা',ours:'আমাদের পণ্য',loading:'লোড হচ্ছে…',help:'সহায়তা ও জিজ্ঞাসা',support:'সহায়তা',del:'ডেলিভারি চার্জ',free:'ফ্রি',hw:'আমরা কীভাবে সাহায্য করতে পারি?',lcs:'অনলাইনে আমাদের সাথে কথা বলুন',was:'WhatsApp-এ মেসেজ করুন',home:'হোম',wab:'WhatsApp',lc:'লাইভ চ্যাট',wa2:'WhatsApp-এ মেসেজ',items:'টি পণ্য',none:'কোনো পণ্য পাওয়া যায়নি।',added:'কার্টে যোগ হয়েছে',add:'কার্টে যোগ করুন',buy:'এখনই কিনুন',yc:'আপনার কার্ট',close:'বন্ধ',rm:'মুছুন',empty:'আপনার কার্ট খালি।',total:'মোট',order:'অর্ডার করুন',dt:'ডেলিভারির তথ্য',nm:'আপনার নাম',ph:'মোবাইল নম্বর',ad:'সম্পূর্ণ ঠিকানা',nt:'বিশেষ নির্দেশনা (ঐচ্ছিক)',pay:'পেমেন্ট',onDel:'ডেলিভারির সময়',gt:'সর্বমোট',conf:'অর্ডার নিশ্চিত করুন',e1:'আপনার নামটি লিখুন।',e2:'সঠিক মোবাইল নম্বর দিন (যেমন 01XXXXXXXXX)।',e3:'সম্পূর্ণ ঠিকানা লিখুন।',wait:'অনুগ্রহ করে অপেক্ষা করুন…',done:'অর্ডার সম্পন্ন হয়েছে',onum:'আপনার অর্ডার নম্বর',soon:'আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।',ok:'ঠিক আছে',fail:'অর্ডার জমা হয়নি। আবার চেষ্টা করুন অথবা',gethelp:'সহায়তা নিন',m1:'আসসালামু আলাইকুম, আমার একটি জিজ্ঞাসা ছিল।',m2:'আমি অর্ডার করতে পারছি না।',lg:'EN'}};
+const TX={en:{search:'Search products…',menu:'Menu',dark:'Dark',dueC:'Check Due',call:'Call us',welcome:'Welcome',wt:'Welcome to Roza Gift Corner & Electric.',shopNow:'Browse products',brandSub:'Online Shop',hours:'8:00 AM – 10:00 PM',svc1:'Cash on Delivery',svc2:'Online Orders',cart:'Cart',tag:'Your trusted store for gifts and electricals',ours:'Our Products',loading:'Loading…',help:'Help & Inquiries',support:'Support',del:'Delivery',free:'Free',hw:'How can we help?',lcs:'Chat with us online',was:'Message us on WhatsApp',home:'Home',wab:'WhatsApp',lc:'Live Chat',wa2:'Chat on WhatsApp',items:'products',none:'No products found.',added:'Added to cart',add:'Add to Cart',buy:'Buy Now',yc:'Your Cart',close:'Close',rm:'Remove',empty:'Your cart is empty.',total:'Total',order:'Place Order',dt:'Delivery Details',nm:'Full name',ph:'Mobile number',ad:'Full address',nt:'Notes (optional)',pay:'Payment',onDel:'On delivery',gt:'Grand total',conf:'Confirm Order',e1:'Please enter your name.',e2:'Enter a valid mobile number (e.g. 01XXXXXXXXX).',e3:'Please enter your full address.',wait:'Please wait…',done:'Order placed',onum:'Your order number is',soon:'Our representative will contact you shortly.',ok:'OK',fail:'Your order could not be submitted. Please try again or',gethelp:'contact support',m1:'Hello, I have an inquiry.',m2:'I am unable to place an order.',lg:'বাংলা'},
+bn:{search:'পণ্য খুঁজুন…',menu:'মেনু',dark:'ডার্ক',dueC:'বকেয়া দেখুন',call:'কল করুন',welcome:'স্বাগতম',wt:'রোজা গিফট কর্নার অ্যান্ড ইলেকট্রিক-এ স্বাগতম।',shopNow:'পণ্য দেখুন',brandSub:'অনলাইন শপ',hours:'সকাল ৮:০০ – রাত ১০:০০',svc1:'ক্যাশ অন ডেলিভারি',svc2:'অনলাইন অর্ডার',cart:'কার্ট',tag:'উপহার ও ইলেকট্রিক পণ্যের বিশ্বস্ত ঠিকানা',ours:'আমাদের পণ্য',loading:'লোড হচ্ছে…',help:'সহায়তা ও জিজ্ঞাসা',support:'সহায়তা',del:'ডেলিভারি চার্জ',free:'ফ্রি',hw:'আমরা কীভাবে সাহায্য করতে পারি?',lcs:'অনলাইনে আমাদের সাথে কথা বলুন',was:'WhatsApp-এ মেসেজ করুন',home:'হোম',wab:'WhatsApp',lc:'লাইভ চ্যাট',wa2:'WhatsApp-এ মেসেজ',items:'টি পণ্য',none:'কোনো পণ্য পাওয়া যায়নি।',added:'কার্টে যোগ হয়েছে',add:'কার্টে যোগ করুন',buy:'এখনই কিনুন',yc:'আপনার কার্ট',close:'বন্ধ',rm:'মুছুন',empty:'আপনার কার্ট খালি।',total:'মোট',order:'অর্ডার করুন',dt:'ডেলিভারির তথ্য',nm:'আপনার নাম',ph:'মোবাইল নম্বর',ad:'সম্পূর্ণ ঠিকানা',nt:'বিশেষ নির্দেশনা (ঐচ্ছিক)',pay:'পেমেন্ট',onDel:'ডেলিভারির সময়',gt:'সর্বমোট',conf:'অর্ডার নিশ্চিত করুন',e1:'আপনার নামটি লিখুন।',e2:'সঠিক মোবাইল নম্বর দিন (যেমন 01XXXXXXXXX)।',e3:'সম্পূর্ণ ঠিকানা লিখুন।',wait:'অনুগ্রহ করে অপেক্ষা করুন…',done:'অর্ডার সম্পন্ন হয়েছে',onum:'আপনার অর্ডার নম্বর',soon:'আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।',ok:'ঠিক আছে',fail:'অর্ডার জমা হয়নি। আবার চেষ্টা করুন অথবা',gethelp:'সহায়তা নিন',m1:'আসসালামু আলাইকুম, আমার একটি জিজ্ঞাসা ছিল।',m2:'আমি অর্ডার করতে পারছি না।',lg:'EN'}};
 let L='en';try{L=localStorage.getItem('rg_lang')==='bn'?'bn':'en'}catch(e){}
 const t=k=>TX[L][k];
-function paint(){document.documentElement.lang=L;document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t(e.dataset.i));document.querySelectorAll('[data-ph]').forEach(e=>e.placeholder=t(e.dataset.ph));document.querySelectorAll('[data-al]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.al)));$('#lg').textContent=t('lg');$('#wa').href=wl(t('m1'));$('#fh').href=$('#wa').href}
+function paint(){document.documentElement.lang=L;document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t(e.dataset.i));document.querySelectorAll('[data-ph]').forEach(e=>e.placeholder=t(e.dataset.ph));document.querySelectorAll('[data-al]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.al)));$('#lg').textContent=t('lg');$('#wa').href=wl(t('m1'));$('#fh').href=$('#wa').href;$('#waH').href=$('#wa').href}
 const bn=n=>Math.round(n).toLocaleString(L==='bn'?'bn-BD':'en-US'),tk=n=>'৳'+bn(n);
 $('#yr').textContent=new Date().getFullYear();paint();
 let P=[],cart={};try{cart=JSON.parse(localStorage.getItem('rg_cart')||'{}')}catch(e){}
@@ -160,7 +319,7 @@ function checkout(items,fromCart){
 document.addEventListener('click',e=>{
   if(e.target.id==='ov')return close();
   const rl=e.target.closest('a[data-r]');if(rl){e.preventDefault();nav(rl.dataset.r);return}
-  const b=e.target.closest('[data-a]');if(!b){if(e.target.closest('#cbtn'))nav('cart');return}
+  const b=e.target.closest('[data-a]');if(!b)return
   const a=b.dataset.a,id=b.dataset.id,p=find(id);
   if(a==='add'&&p){cart[id]=(cart[id]||0)+1;keep();badge();toast(t('added'))}
   else if(a==='buy'&&p)nav('buy-now/'+id);
@@ -174,15 +333,23 @@ $('#lg').addEventListener('click',()=>{L=L==='bn'?'en':'bn';try{localStorage.set
 const shut=()=>{$('#spm').classList.remove('on');$('#sp').classList.remove('on');$('#sp').setAttribute('aria-expanded','false')};
 $('#sp').addEventListener('click',e=>{e.stopPropagation();const o=$('#spm').classList.toggle('on');$('#sp').classList.toggle('on',o);$('#sp').setAttribute('aria-expanded',o)});
 document.addEventListener('click',e=>{if(!e.target.closest('#spm'))shut()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){shut();sOpen(false);close()}});
-const hh=()=>document.documentElement.style.setProperty('--hh',document.querySelector('header').offsetHeight+'px');
-const sOpen=o=>{$('#spn').classList.toggle('on',o);$('#sb').setAttribute('aria-expanded',o);if(o){hh();setTimeout(()=>$('#q').focus(),60)}else $('#q').blur()};
-function sMark(){const v=$('#q').value.trim();$('#sd').hidden=!v;$('#sx').hidden=!v}
-$('#sb').addEventListener('click',()=>sOpen(!$('#spn').classList.contains('on')));
+const navShut=()=>{$('#nav').classList.remove('open');$('#mBtn').setAttribute('aria-expanded','false');document.querySelectorAll('.dcu-nav-item.open').forEach(x=>{x.classList.remove('open');const b=x.querySelector('[aria-haspopup]');if(b)b.setAttribute('aria-expanded','false')})};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){shut();navShut();close()}});
+const hh=()=>{};
+function sMark(){$('#sx').hidden=!$('#q').value.trim()}
 $('#sx').addEventListener('click',()=>{$('#q').value='';draw();$('#q').focus()});
-$('#q').addEventListener('keydown',e=>{if(e.key==='Enter')sOpen(false)});
-document.addEventListener('click',e=>{if(!e.target.closest('#spn,#sb'))sOpen(false)});
-addEventListener('resize',hh);addEventListener('load',hh);hh();
+$('#q').addEventListener('keydown',e=>{if(e.key==='Enter'){e.target.blur();const m=document.getElementById('products');if(m)m.scrollIntoView({behavior:'smooth',block:'start'})}});
+/* header menu (mobile) + Support drop-down */
+$('#mBtn').addEventListener('click',e=>{e.stopPropagation();const o=$('#nav').classList.toggle('open');$('#mBtn').setAttribute('aria-expanded',o)});
+$('#supBtn').addEventListener('click',e=>{e.stopPropagation();const it=$('#supBtn').parentNode,o=!it.classList.contains('open');navShut();if(o){it.classList.add('open');$('#supBtn').setAttribute('aria-expanded','true');$('#nav').classList.add('open')}});
+document.addEventListener('click',e=>{if(!e.target.closest('.dcu-nav-item,#mBtn'))navShut();else if(e.target.closest('a.dcu-nav-btn'))navShut()});
+/* dark mode (same switch as the main app) + footer language / dark buttons */
+const setDark=on=>{document.body.classList.toggle('dark-mode',on);$('#dk').checked=on;try{localStorage.setItem('rg_dark',on?'1':'0')}catch(e){}const m=document.querySelector('meta[name=theme-color]');if(m)m.content=on?'#14181f':'#1f4e79'};
+$('#dk').checked=document.body.classList.contains('dark-mode');setDark($('#dk').checked);
+$('#dk').addEventListener('change',e=>setDark(e.target.checked));
+$('#dkF').addEventListener('click',()=>setDark(!document.body.classList.contains('dark-mode')));
+document.querySelectorAll('[data-l]').forEach(b=>b.addEventListener('click',()=>{if(L!==b.dataset.l)$('#lg').click()}));
+document.querySelectorAll('a[href="#products"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();if(location.pathname!==BASE)nav('');const m=document.getElementById('products');if(m)m.scrollIntoView({behavior:'smooth',block:'start'})}));
 $('#q').addEventListener('input',draw);
 let rs=null;try{const nv=performance.getEntriesByType('navigation')[0];if(nv&&nv.type==='back_forward')rs=sg('rg_ui')}catch(e){}
 let MT=null;const mtPaint=()=>{const e=$('#mt'),m=MT&&MT.on===true?(L==='bn'?(MT.msgBn||MT.msgEn):(MT.msgEn||MT.msgBn)):'';e.textContent=m||'';e.hidden=!m;document.body.classList.toggle('mtn',!!m);try{hh()}catch(x){}};
